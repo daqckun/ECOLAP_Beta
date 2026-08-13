@@ -1,39 +1,19 @@
 <!DOCTYPE html>
-<!-- Define el tipo de documento como HTML5 -->
 <html lang="es">
-<!-- Idioma del documento: español -->
 
 <head>
-    <!-- Cabecera con metadatos: información no visible del documento -->
-
     <meta charset="UTF-8">
-    <!-- Codificación UTF-8: permite mostrar correctamente tildes, ñ y caracteres especiales -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Hace la página responsiva y controla el zoom inicial en dispositivos móviles -->
-
     <meta name="description" content="Inicia sesión o regístrate en ECOLAP. Únete a la comunidad verde líder en gestión del reciclaje.">
-    <!-- Descripción del módulo de login para SEO -->
-
     <meta name="author" content="Equipo ECOLAP">
     <meta name="keywords" content="ECOLAP, login, registro, autenticación, reciclaje, comunidad verde, dark theme">
-    <!-- Palabras clave para indexación en motores de búsqueda -->
 
     <title>ECOLAP | Iniciar Sesión - Súmate al Cambio Verde</title>
-    <!-- Título que aparece en la pestaña del navegador -->
 
-    <!-- Carga de Google Fonts: Montserrat y Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- ==========================================================
-         ESTILOS CSS INTEGRADOS (NO SE USA ARCHIVO EXTERNO)
-         ----------------------------------------------------------
-         Todo el CSS necesario para esta página está embebido
-         aquí para garantizar la correcta aplicación inmediata
-         de los colores, tarjetas, glassmorphism y efectos neón.
-         ========================================================== -->
     <style>
         /* ============================================
            1. VARIABLES Y RESET
@@ -46,7 +26,6 @@
             --ecolap-blanco: #FFFFFF;
             --ecolap-neon: #00FF87;
 
-            /* Colores específicos del Login Dark Glow */
             --login-bg-dark: #0b1d16;
             --login-bg-mid: #123b2b;
             --glass-bg: rgba(255, 255, 255, 0.05);
@@ -58,14 +37,12 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Montserrat', 'Poppins', sans-serif;
             min-height: 100vh;
             color: var(--ecolap-blanco);
-            /* Fondo oscuro con degradado radial que crea profundidad */
             background: linear-gradient(135deg, var(--login-bg-dark) 0%, var(--login-bg-mid) 100%);
             background-attachment: fixed;
             overflow-x: hidden;
@@ -107,7 +84,6 @@
             justify-content: space-between;
         }
 
-        /* Logo con efecto neón brillante */
         .ecolap-logo-glow {
             display: flex;
             align-items: center;
@@ -136,7 +112,6 @@
             text-shadow: 0 0 10px rgba(0, 255, 135, 0.5);
         }
 
-        /* Botón de regreso al inicio */
         .ecolap-back-btn {
             color: var(--ecolap-neon);
             font-weight: 600;
@@ -167,7 +142,6 @@
             overflow: hidden;
         }
 
-        /* Luces de neón decorativas (efecto Glow) */
         .ecolap-glow {
             position: absolute;
             border-radius: 50%;
@@ -177,37 +151,13 @@
             z-index: 0;
         }
 
-        .ecolap-glow-1 {
-            top: 10%; left: 10%;
-            width: 350px; height: 350px;
-            background-color: var(--ecolap-neon);
-            animation: ecolap-glow-float 12s ease-in-out infinite;
-        }
-
-        .ecolap-glow-2 {
-            bottom: 15%; right: 10%;
-            width: 400px; height: 400px;
-            background-color: var(--ecolap-esmeralda);
-            animation: ecolap-glow-float 14s ease-in-out infinite 2s;
-        }
-
-        .ecolap-glow-3 {
-            top: 50%; left: 50%;
-            width: 300px; height: 300px;
-            background-color: #00cc6a;
-            transform: translate(-50%, -50%);
-            animation: ecolap-glow-float 10s ease-in-out infinite 4s;
-        }
-
-        .ecolap-glow-4 {
-            top: 30%; right: 30%;
-            width: 280px; height: 280px;
-            background-color: var(--ecolap-hoja);
-            animation: ecolap-glow-float 16s ease-in-out infinite 1s;
-        }
+        .ecolap-glow-1 { top: 10%; left: 10%; width: 350px; height: 350px; background-color: var(--ecolap-neon); animation: ecolap-glow-float 12s ease-in-out infinite; }
+        .ecolap-glow-2 { bottom: 15%; right: 10%; width: 400px; height: 400px; background-color: var(--ecolap-esmeralda); animation: ecolap-glow-float 14s ease-in-out infinite 2s; }
+        .ecolap-glow-3 { top: 50%; left: 50%; width: 300px; height: 300px; background-color: #00cc6a; transform: translate(-50%, -50%); animation: ecolap-glow-float 10s ease-in-out infinite 4s; }
+        .ecolap-glow-4 { top: 30%; right: 30%; width: 280px; height: 280px; background-color: var(--ecolap-hoja); animation: ecolap-glow-float 16s ease-in-out infinite 1s; }
 
         /* ============================================
-           4. TARJETA PRINCIPAL DIVIDIDA (GLASSMORPHIC)
+           4. TARJETA PRINCIPAL DIVIDIDA
            ============================================ */
         .ecolap-login-container {
             position: relative;
@@ -255,12 +205,7 @@
             filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
         }
 
-        .ecolap-visual-title {
-            color: var(--ecolap-blanco);
-            font-size: 2rem;
-            margin-bottom: 14px;
-        }
-
+        .ecolap-visual-title { color: var(--ecolap-blanco); font-size: 2rem; margin-bottom: 14px; }
         .ecolap-visual-title span {
             background: var(--gradiente-ecolap);
             -webkit-background-clip: text;
@@ -268,31 +213,12 @@
             background-clip: text;
         }
 
-        .ecolap-visual-subtitle {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+        .ecolap-visual-subtitle { color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; margin-bottom: 30px; line-height: 1.6; }
 
-        /* Selector de rol */
         .ecolap-role-selector { margin-top: 20px; }
+        .ecolap-role-label { color: var(--ecolap-neon); font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
 
-        .ecolap-role-label {
-            color: var(--ecolap-neon);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .ecolap-role-options {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 16px;
-        }
+        .ecolap-role-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
 
         .ecolap-role-option {
             background-color: rgba(255, 255, 255, 0.05);
@@ -308,17 +234,8 @@
             gap: 6px;
         }
 
-        .ecolap-role-option:hover {
-            background-color: rgba(0, 255, 135, 0.1);
-            border-color: var(--glass-border-hover);
-            transform: translateY(-3px);
-        }
-
-        .ecolap-role-option.active {
-            background-color: rgba(0, 255, 135, 0.15);
-            border-color: var(--ecolap-neon);
-            box-shadow: 0 0 20px rgba(0, 255, 135, 0.3);
-        }
+        .ecolap-role-option:hover { background-color: rgba(0, 255, 135, 0.1); border-color: var(--glass-border-hover); transform: translateY(-3px); }
+        .ecolap-role-option.active { background-color: rgba(0, 255, 135, 0.15); border-color: var(--ecolap-neon); box-shadow: 0 0 20px rgba(0, 255, 135, 0.3); }
 
         .ecolap-role-icon { font-size: 1.5rem; }
         .ecolap-role-text { color: var(--ecolap-blanco); font-size: 0.8rem; font-weight: 600; }
@@ -336,275 +253,102 @@
         /* ============================================
            6. COLUMNA DERECHA: FORMULARIO
            ============================================ */
-        .ecolap-login-form-card {
-            padding: 50px 40px;
-            background-color: rgba(11, 29, 22, 0.4);
-        }
+        .ecolap-login-form-card { padding: 50px 40px; background-color: rgba(11, 29, 22, 0.4); }
 
-        /* Tabs conmutables */
-        .ecolap-form-tabs {
-            display: flex;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 50px;
-            padding: 4px;
-            margin-bottom: 28px;
-        }
+        .ecolap-form-tabs { display: flex; background-color: rgba(0, 0, 0, 0.3); border-radius: 50px; padding: 4px; margin-bottom: 28px; }
 
         .ecolap-form-tab {
-            flex: 1;
-            padding: 12px 16px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            border-radius: 50px;
-            transition: var(--transicion);
+            flex: 1; padding: 12px 16px; text-align: center; font-weight: 600; font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6); cursor: pointer; border-radius: 50px; transition: var(--transicion);
         }
 
-        .ecolap-form-tab.active {
-            background-color: var(--ecolap-neon);
-            color: var(--login-bg-dark);
-            box-shadow: 0 4px 15px rgba(0, 255, 135, 0.4);
-        }
+        .ecolap-form-tab.active { background-color: var(--ecolap-neon); color: var(--login-bg-dark); box-shadow: 0 4px 15px rgba(0, 255, 135, 0.4); }
+        .ecolap-form-tab:not(.active):hover { color: var(--ecolap-blanco); background-color: rgba(255, 255, 255, 0.05); }
 
-        .ecolap-form-tab:not(.active):hover {
-            color: var(--ecolap-blanco);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* Contenido de cada formulario */
         .ecolap-form-content { display: none; animation: ecolap-fade-in-up 0.4s ease; }
         .ecolap-form-content.active { display: block; }
 
-        /* Botón de Google */
         .ecolap-google-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            padding: 14px 20px;
-            background-color: var(--ecolap-blanco);
-            border: 2px solid transparent;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #1f1f1f;
-            cursor: pointer;
-            transition: var(--transicion);
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            width: 100%; padding: 14px 20px; background-color: var(--ecolap-blanco); border: 2px solid transparent;
+            border-radius: 50px; font-weight: 600; font-size: 0.95rem; color: #1f1f1f; cursor: pointer; transition: var(--transicion);
         }
 
-        .ecolap-google-btn:hover {
-            background-color: var(--ecolap-fondo);
-            border-color: var(--ecolap-neon);
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(0, 255, 135, 0.4);
-        }
-
+        .ecolap-google-btn:hover { background-color: var(--ecolap-fondo); border-color: var(--ecolap-neon); transform: translateY(-2px); box-shadow: 0 0 25px rgba(0, 255, 135, 0.4); }
         .ecolap-google-icon { font-size: 1.1rem; font-weight: 800; }
 
-        /* Separador con estilo neón */
         .ecolap-neon-divider {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 22px 0;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-align: center;
+            display: flex; align-items: center; gap: 12px; margin: 22px 0; color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem; font-weight: 500; text-align: center;
         }
 
-        .ecolap-neon-divider::before,
-        .ecolap-neon-divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--glass-border-hover), transparent);
+        .ecolap-neon-divider::before, .ecolap-neon-divider::after {
+            content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--glass-border-hover), transparent);
         }
 
-        /* Inputs con borde brillante al foco */
         .ecolap-input-group { margin-bottom: 16px; }
-
-        .ecolap-input-group label {
-            display: block;
-            color: var(--ecolap-neon);
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .ecolap-input-group label { display: block; color: var(--ecolap-neon); font-size: 0.8rem; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
 
         .ecolap-glow-input {
-            width: 100%;
-            padding: 14px 18px;
-            background-color: rgba(0, 0, 0, 0.3);
-            border: 2px solid var(--glass-border);
-            border-radius: 12px;
-            color: var(--ecolap-blanco);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: var(--transicion);
+            width: 100%; padding: 14px 18px; background-color: rgba(0, 0, 0, 0.3); border: 2px solid var(--glass-border);
+            border-radius: 12px; color: var(--ecolap-blanco); font-family: inherit; font-size: 0.95rem; transition: var(--transicion);
         }
 
         .ecolap-glow-input::placeholder { color: rgba(255, 255, 255, 0.4); }
-
-        .ecolap-glow-input:focus {
-            outline: none;
-            border-color: var(--ecolap-neon);
-            background-color: rgba(0, 255, 135, 0.05);
-            box-shadow: 0 0 0 3px rgba(0, 255, 135, 0.15), 0 0 20px rgba(0, 255, 135, 0.25);
-        }
-
+        .ecolap-glow-input:focus { outline: none; border-color: var(--ecolap-neon); background-color: rgba(0, 255, 135, 0.05); box-shadow: 0 0 0 3px rgba(0, 255, 135, 0.15), 0 0 20px rgba(0, 255, 135, 0.25); }
         .ecolap-glow-input:hover:not(:focus) { border-color: var(--glass-border-hover); }
 
-        /* Fila checkbox y enlaces */
-        .ecolap-form-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+        .ecolap-form-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; flex-wrap: wrap; gap: 10px; }
+        .ecolap-checkbox-label { display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.8); font-size: 0.88rem; cursor: pointer; }
+        .ecolap-checkbox-label input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: var(--ecolap-neon); }
 
-        .ecolap-checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.88rem;
-            cursor: pointer;
-        }
+        .ecolap-link { color: var(--ecolap-neon); font-weight: 600; font-size: 0.88rem; }
+        .ecolap-link:hover { color: var(--ecolap-blanco); text-shadow: 0 0 8px rgba(0, 255, 135, 0.6); }
 
-        .ecolap-checkbox-label input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            accent-color: var(--ecolap-neon);
-        }
-
-        .ecolap-link {
-            color: var(--ecolap-neon);
-            font-weight: 600;
-            font-size: 0.88rem;
-        }
-
-        .ecolap-link:hover {
-            color: var(--ecolap-blanco);
-            text-shadow: 0 0 8px rgba(0, 255, 135, 0.6);
-        }
-
-        /* Botón principal con brillo deslizante */
         .ecolap-shine-btn {
-            position: relative;
-            width: 100%;
-            padding: 16px 24px;
-            background: var(--gradiente-ecolap);
-            color: var(--ecolap-blanco);
-            border: none;
-            border-radius: 50px;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 168, 107, 0.4), 0 0 20px rgba(0, 255, 135, 0.2);
-            transition: var(--transicion);
-            margin-bottom: 16px;
-            z-index: 1;
+            position: relative; width: 100%; padding: 16px 24px; background: var(--gradiente-ecolap); color: var(--ecolap-blanco);
+            border: none; border-radius: 50px; font-family: inherit; font-weight: 700; font-size: 1rem; cursor: pointer;
+            overflow: hidden; box-shadow: 0 8px 25px rgba(0, 168, 107, 0.4), 0 0 20px rgba(0, 255, 135, 0.2); transition: var(--transicion); margin-bottom: 16px; z-index: 1;
         }
 
-        /* Capa de brillo que se desplaza al hacer hover */
         .ecolap-shine-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.6s ease;
-            z-index: -1;
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent); transition: left 0.6s ease; z-index: -1;
         }
 
-        .ecolap-shine-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 168, 107, 0.6), 0 0 30px rgba(0, 255, 135, 0.5);
-        }
-
+        .ecolap-shine-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0, 168, 107, 0.6), 0 0 30px rgba(0, 255, 135, 0.5); }
         .ecolap-shine-btn:hover::before { left: 100%; }
 
-        /* Texto inferior del formulario */
-        .ecolap-form-footer {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.88rem;
-            margin-top: 10px;
-        }
-
+        .ecolap-form-footer { text-align: center; color: rgba(255, 255, 255, 0.6); font-size: 0.88rem; margin-top: 10px; }
         .ecolap-form-footer a { color: var(--ecolap-neon); font-weight: 600; }
-        .ecolap-form-footer a:hover { text-shadow: 0 0 8px rgba(0, 255, 135, 0.6); }
 
         /* ============================================
            7. FOOTER COMPACTO
            ============================================ */
         .ecolap-compact-footer {
-            text-align: center;
-            padding: 24px 20px;
-            background-color: rgba(11, 29, 22, 0.6);
-            border-top: 1px solid var(--glass-border);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.82rem;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
+            text-align: center; padding: 24px 20px; background-color: rgba(11, 29, 22, 0.6);
+            border-top: 1px solid var(--glass-border); color: rgba(255, 255, 255, 0.5); font-size: 0.82rem;
+            display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
         }
 
         .ecolap-compact-footer span { color: var(--ecolap-neon); font-weight: 600; }
 
-        /* ============================================
-           8. ANIMACIONES
-           ============================================ */
-        @keyframes ecolap-fade-in-up {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        /* ANIMACIONES Y RESPONSIVE */
+        @keyframes ecolap-fade-in-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes ecolap-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes ecolap-glow-float { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(30px, -40px) scale(1.1); } 66% { transform: translate(-30px, 30px) scale(0.95); } }
+        @keyframes ecolap-logo-pulse { 0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 135, 0.6); } 50% { box-shadow: 0 0 30px rgba(0, 255, 135, 0.8); } }
 
-        @keyframes ecolap-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes ecolap-glow-float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -40px) scale(1.1); }
-            66% { transform: translate(-30px, 30px) scale(0.95); }
-        }
-
-        @keyframes ecolap-logo-pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 135, 0.6), 0 0 40px rgba(0, 255, 135, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(0, 255, 135, 0.8), 0 0 60px rgba(0, 255, 135, 0.5); }
-        }
-
-        /* ============================================
-           9. RESPONSIVE
-           ============================================ */
         @media (max-width: 900px) {
             .ecolap-login-container { grid-template-columns: 1fr; max-width: 500px; }
             .ecolap-login-visual { padding: 40px 30px; text-align: center; align-items: center; }
             .ecolap-visual-badge { margin: 0 auto 20px; }
-            .ecolap-visual-title { font-size: 1.6rem; }
             .ecolap-role-options { max-width: 400px; margin: 0 auto 16px; }
         }
 
         @media (max-width: 480px) {
             .ecolap-login-section { padding: 30px 16px; }
             .ecolap-login-visual, .ecolap-login-form-card { padding: 30px 22px; }
-            .ecolap-visual-title { font-size: 1.4rem; }
             .ecolap-compact-nav { flex-direction: column; gap: 10px; }
             .ecolap-compact-footer { flex-direction: column; }
         }
@@ -612,50 +356,30 @@
 </head>
 
 <body>
-    <!-- Inicio del cuerpo del documento -->
 
-    <!-- ==========================================================
-         HEADER COMPACTO ECOLAP
-         Versión minimal con logo brillante y botón de regreso
-         ========================================================== -->
     <header class="ecolap-compact-header">
         <div class="ecolap-compact-nav">
-            <!-- Logo ECOLAP con efecto brillante neón -->
             <a href="index.html" class="ecolap-logo-glow">
                 <div class="ecolap-logo-icon">🌿</div>
                 <div class="ecolap-logo-text">ECO<span>LAP</span></div>
             </a>
-
-            <!-- Botón de regreso al inicio -->
             <a href="index.html" class="ecolap-back-btn">← Volver a ECOLAP</a>
         </div>
     </header>
 
-    <!-- ==========================================================
-         SECCIÓN PRINCIPAL DEL LOGIN
-         Contiene la tarjeta glassmorphic dividida en 2 columnas
-         ========================================================== -->
     <section class="ecolap-login-section">
-
-        <!-- Luces de neón decorativas (efecto Glow) -->
         <div class="ecolap-glow ecolap-glow-1"></div>
         <div class="ecolap-glow ecolap-glow-2"></div>
         <div class="ecolap-glow ecolap-glow-3"></div>
         <div class="ecolap-glow ecolap-glow-4"></div>
 
-        <!-- Tarjeta principal dividida -->
         <div class="ecolap-login-container">
 
-            <!-- ============================================
-                 COLUMNA IZQUIERDA: PANEL VISUAL
-                 ============================================ -->
             <div class="ecolap-login-visual">
-                <!-- Badge con emoji flotante animado -->
                 <div class="ecolap-visual-badge">
                     <div class="ecolap-floating-emoji">🌍</div>
                 </div>
 
-                <!-- Frase motivacional principal -->
                 <h1 class="ecolap-visual-title">
                     Súmate al Cambio <span>Verde</span> con ECOLAP
                 </h1>
@@ -664,95 +388,54 @@
                     Aprende, juega y transforma el planeta junto a una comunidad global de agentes de cambio ambiental.
                 </p>
 
-                <!-- Mini-selector visual de rol de usuario -->
                 <div class="ecolap-role-selector">
                     <p class="ecolap-role-label">¿Quién eres en ECOLAP?</p>
                     <div class="ecolap-role-options">
-
-                        <!-- Opción Usuario (activa por defecto) -->
                         <div class="ecolap-role-option active" data-role="usuario">
                             <span class="ecolap-role-icon">👤</span>
                             <span class="ecolap-role-text">Usuario</span>
                         </div>
-
-                        <!-- Opción Conductor -->
                         <div class="ecolap-role-option" data-role="conductor">
                             <span class="ecolap-role-icon">🚛</span>
                             <span class="ecolap-role-text">Conductor</span>
                         </div>
-
-                        <!-- Opción Administrador -->
                         <div class="ecolap-role-option" data-role="admin">
                             <span class="ecolap-role-icon">⚙️</span>
                             <span class="ecolap-role-text">Admin</span>
                         </div>
                     </div>
 
-                    <!-- Mensaje dinámico que cambia según el rol -->
                     <p class="ecolap-role-message" id="roleMessage">
                         💚 Bienvenido usuario ECOLAP, tu impacto empieza aquí.
                     </p>
                 </div>
             </div>
-            <!-- Fin de la columna izquierda -->
 
-            <!-- ============================================
-                 COLUMNA DERECHA: FORMULARIO INTERACTIVO
-                 ============================================ -->
             <div class="ecolap-login-form-card">
 
-                <!-- Pestañas conmutables Login / Registro -->
                 <div class="ecolap-form-tabs">
                     <button class="ecolap-form-tab active" data-tab="login">Iniciar Sesión</button>
                     <button class="ecolap-form-tab" data-tab="register">Registrarse</button>
                 </div>
 
-                <!-- ============================================
-                     FORMULARIO DE INICIO DE SESIÓN
-                     ============================================ -->
                 <form class="ecolap-form-content active" id="loginForm" autocomplete="on">
-
-                    <!-- Botón de Google con hover neón -->
-                    <button type="button" class="ecolap-google-btn">
-                        <span class="ecolap-google-icon">
-                            <span style="color: #4285F4;">G</span>
-                        </span>
+                    <button type="button" class="ecolap-google-btn" onclick="iniciarConGoogle()">
+                        <span class="ecolap-google-icon"><span style="color: #4285F4;">G</span></span>
                         Continuar con Google
                     </button>
 
-                    <!-- Separador elegante con estilo neón -->
-                    <div class="ecolap-neon-divider">
-                        <span>O ingresa con tu cuenta</span>
-                    </div>
+                    <div class="ecolap-neon-divider"><span>O ingresa con tu cuenta</span></div>
 
-                    <!-- Campo de correo electrónico -->
                     <div class="ecolap-input-group">
                         <label for="loginEmail">📧 Correo Electrónico</label>
-                        <input
-                            type="email"
-                            id="loginEmail"
-                            class="ecolap-glow-input"
-                            placeholder="tu@correo.com"
-                            required
-                            autocomplete="email"
-                        >
+                        <input type="email" id="loginEmail" class="ecolap-glow-input" placeholder="tu@correo.com" required autocomplete="email">
                     </div>
 
-                    <!-- Campo de contraseña -->
                     <div class="ecolap-input-group">
                         <label for="loginPassword">🔒 Contraseña</label>
-                        <input
-                            type="password"
-                            id="loginPassword"
-                            class="ecolap-glow-input"
-                            placeholder="••••••••"
-                            required
-                            minlength="6"
-                            autocomplete="current-password"
-                        >
+                        <input type="password" id="loginPassword" class="ecolap-glow-input" placeholder="••••••••" required minlength="6" autocomplete="current-password">
                     </div>
 
-                    <!-- Fila: Recordarme y recuperar contraseña -->
                     <div class="ecolap-form-row">
                         <label class="ecolap-checkbox-label">
                             <input type="checkbox" id="rememberMe">
@@ -761,159 +444,203 @@
                         <a href="#" class="ecolap-link">¿Olvidaste tu contraseña?</a>
                     </div>
 
-                    <!-- Botón principal con animación de brillo -->
                     <button type="submit" class="ecolap-shine-btn">
                         <span>Iniciar Sesión en ECOLAP</span>
                     </button>
 
                     <p class="ecolap-form-footer">
-                        ¿No tienes cuenta?
-                        <a href="#" data-switch="register">Crea una cuenta ECOLAP</a>
+                        ¿No tienes cuenta? <a href="#" data-switch="register">Crea una cuenta ECOLAP</a>
                     </p>
                 </form>
-                <!-- Fin del formulario de Login -->
 
-                <!-- ============================================
-                     FORMULARIO DE REGISTRO
-                     ============================================ -->
                 <form class="ecolap-form-content" id="registerForm" autocomplete="on">
-
-                    <!-- Botón de Google para registro -->
-                    <button type="button" class="ecolap-google-btn">
-                        <span class="ecolap-google-icon">
-                            <span style="color: #4285F4;">G</span>
-                        </span>
+                    <button type="button" class="ecolap-google-btn" onclick="iniciarConGoogle()">
+                        <span class="ecolap-google-icon"><span style="color: #4285F4;">G</span></span>
                         Registrarse con Google
                     </button>
 
-                    <div class="ecolap-neon-divider">
-                        <span>O crea tu cuenta con correo</span>
-                    </div>
+                    <div class="ecolap-neon-divider"><span>O crea tu cuenta con correo</span></div>
 
-                    <!-- Campo de nombre completo -->
                     <div class="ecolap-input-group">
                         <label for="registerName">👤 Nombre Completo</label>
-                        <input
-                            type="text"
-                            id="registerName"
-                            class="ecolap-glow-input"
-                            placeholder="Tu nombre"
-                            required
-                            autocomplete="name"
-                        >
+                        <input type="text" id="registerName" class="ecolap-glow-input" placeholder="Tu nombre" required autocomplete="name">
                     </div>
 
-                    <!-- Campo de correo -->
                     <div class="ecolap-input-group">
                         <label for="registerEmail">📧 Correo Electrónico</label>
-                        <input
-                            type="email"
-                            id="registerEmail"
-                            class="ecolap-glow-input"
-                            placeholder="tu@correo.com"
-                            required
-                            autocomplete="email"
-                        >
+                        <input type="email" id="registerEmail" class="ecolap-glow-input" placeholder="tu@correo.com" required autocomplete="email">
                     </div>
 
-                    <!-- Campo de contraseña -->
                     <div class="ecolap-input-group">
                         <label for="registerPassword">🔒 Crea una Contraseña</label>
-                        <input
-                            type="password"
-                            id="registerPassword"
-                            class="ecolap-glow-input"
-                            placeholder="Mínimo 6 caracteres"
-                            required
-                            minlength="6"
-                            autocomplete="new-password"
-                        >
+                        <input type="password" id="registerPassword" class="ecolap-glow-input" placeholder="Mínimo 6 caracteres" required minlength="6" autocomplete="new-password">
                     </div>
 
-                    <!-- Checkbox de aceptación de términos -->
                     <label class="ecolap-checkbox-label" style="margin-bottom: 20px;">
                         <input type="checkbox" id="acceptTerms" required>
                         <span>Acepto los <a href="#" class="ecolap-link">términos</a> de ECOLAP</span>
                     </label>
 
-                    <!-- Botón de creación de cuenta -->
                     <button type="submit" class="ecolap-shine-btn">
                         <span>Crear Cuenta ECOLAP</span>
                     </button>
 
                     <p class="ecolap-form-footer">
-                        ¿Ya tienes cuenta?
-                        <a href="#" data-switch="login">Iniciar sesión</a>
+                        ¿Ya tienes cuenta? <a href="#" data-switch="login">Iniciar sesión</a>
                     </p>
                 </form>
-                <!-- Fin del formulario de Registro -->
+
             </div>
-            <!-- Fin de la columna derecha -->
         </div>
-        <!-- Fin del contenedor principal -->
     </section>
 
-    <!-- ==========================================================
-         FOOTER COMPACTO ECOLAP
-         ========================================================== -->
     <footer class="ecolap-compact-footer">
-        <p>© 2026 <span>ECOLAP</span> · Plataforma oficial de gestión ambiental</p>
-        <p>Desarrollado con 💚 para la <span>propuesta oficial ECOLAP</span></p>
+        <p>© 2026 ECOLAP. Todos los derechos reservados.</p>
+        <p>Juntos por un planeta más <span>verde</span> 🍃</p>
     </footer>
 
-    <!-- ==========================================================
-         SCRIPT JAVASCRIPT
-         Controla tabs, selector de rol y simulación de envío
-         ========================================================== -->
     <script>
-        // ====== Cambio de pestañas (Login / Registro) ======
-        const tabs = document.querySelectorAll('.ecolap-form-tab');
-        const forms = document.querySelectorAll('.ecolap-form-content');
+        // Rol seleccionado por defecto
+        let selectedRole = 'usuario';
 
-        function switchTab(tabName) {
-            tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.tab === tabName));
-            forms.forEach(form => form.classList.toggle('active', form.id === tabName + 'Form'));
-        }
-
-        tabs.forEach(tab => tab.addEventListener('click', () => switchTab(tab.dataset.tab)));
-        document.querySelectorAll('[data-switch]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                switchTab(link.dataset.switch);
-            });
-        });
-
-        // ====== Selector de rol dinámico ======
+        // 1. Selector de Roles e Intercambio de Mensajes
         const roleOptions = document.querySelectorAll('.ecolap-role-option');
         const roleMessage = document.getElementById('roleMessage');
 
         const roleMessages = {
-            usuario: '💚 Bienvenido usuario ECOLAP, tu impacto empieza aquí.',
-            conductor: '🚛 ¡Hola conductor! Gestiona tus rutas de recolección en ECOLAP.',
-            admin: '⚙️ Acceso administrador ECOLAP: panel de control institucional.'
+            usuario: "💚 Bienvenido usuario ECOLAP, tu impacto empieza aquí.",
+            conductor: "🚛 Accede al módulo de recolección y rutas optimizadas.",
+            admin: "⚙️ Panel de administración del sistema y estadísticas verdes."
         };
 
         roleOptions.forEach(option => {
             option.addEventListener('click', () => {
                 roleOptions.forEach(opt => opt.classList.remove('active'));
                 option.classList.add('active');
-                roleMessage.textContent = roleMessages[option.dataset.role];
+                selectedRole = option.dataset.role;
+                roleMessage.textContent = roleMessages[selectedRole];
             });
         });
 
-        // ====== Envío simulado de formularios ======
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            alert(`🌿 Bienvenido a ECOLAP, ${email}! (Demo)`);
+        // 2. Cambio entre Pestañas Login y Registro
+        const tabs = document.querySelectorAll('.ecolap-form-tab');
+        const forms = document.querySelectorAll('.ecolap-form-content');
+        const switchLinks = document.querySelectorAll('[data-switch]');
+
+        function switchTab(targetTab) {
+            tabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.tab === targetTab);
+            });
+            forms.forEach(form => {
+                if (form.id === `${targetTab}Form`) {
+                    form.classList.add('active');
+                } else {
+                    form.classList.remove('active');
+                }
+            });
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab.dataset.tab));
         });
 
-        document.getElementById('registerForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('registerName').value;
-            alert(`🌿 ¡Cuenta ECOLAP creada para ${name}! (Demo)`);
+        switchLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchTab(link.dataset.switch);
+            });
         });
+
+        // 3. Conexión Backend: Iniciar Sesión (POST /api/login)
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password, rol: selectedRole })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(`¡Bienvenido ${data.usuario.nombre}!`);
+                    localStorage.setItem('usuarioEcolap', JSON.stringify(data.usuario));
+                    window.location.href = 'index.html';
+                } else {
+                    alert(data.mensaje || 'Credenciales incorrectas');
+                }
+            } catch (error) {
+                console.error('Error al conectar con la API:', error);
+                alert('No se pudo conectar con el servidor local. Verifica que "node server.js" esté corriendo.');
+            }
+        });
+
+        // 4. Conexión Backend: Crear Cuenta (POST /api/register)
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const nombre = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre, email, password, rol: selectedRole })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('¡Registro exitoso! Ya puedes iniciar sesión con tu nueva cuenta.');
+                    switchTab('login');
+                } else {
+                    alert(data.mensaje || 'Error al registrar el usuario.');
+                }
+            } catch (error) {
+                console.error('Error al conectar con la API:', error);
+                alert('No se pudo conectar con el servidor local.');
+            }
+        });
+
+        // 5. Conexión Backend: Autenticación con Google (POST /api/google-login)
+        async function iniciarConGoogle() {
+            const correoGoogle = prompt("Ingresa tu correo de Google para simular el acceso:");
+            if (!correoGoogle) return;
+
+            const nombreGoogle = correoGoogle.split('@')[0];
+
+            try {
+                const response = await fetch('http://localhost:3000/api/google-login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        nombre: nombreGoogle,
+                        email: correoGoogle,
+                        google_id: 'google_123456789'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(`¡Bienvenido ${data.usuario.nombre}!`);
+                    localStorage.setItem('usuarioEcolap', JSON.stringify(data.usuario));
+                    window.location.href = 'index.html';
+                } else {
+                    alert(data.mensaje || 'Error al conectar con Google');
+                }
+            } catch (error) {
+                console.error('Error al conectar con la API:', error);
+                alert('No se pudo conectar con el servidor local. Verifica que "node server.js" esté corriendo.');
+            }
+        }
     </script>
 </body>
-
 </html>
