@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ECOLAP</string>
+    <string name="title_activity_main">ECOLAP</string>
+    <string name="package_name">com.ecolap.app</string>
+    <string name="custom_url_scheme">com.ecolap.app</string>
+</resources>

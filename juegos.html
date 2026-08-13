@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!-- Define el documento como HTML5 -->
+<html lang="es">
+<!-- Idioma principal del documento: español -->
+
+<head>
+    <!-- Cabecera con metadatos: información no visible del documento -->
+
+    <meta charset="UTF-8">
+    <!-- Codificación UTF-8 para caracteres especiales en español -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace la página adaptable a dispositivos móviles -->
+
+    <meta name="description" content="ECOLAP Games: minijuegos interactivos para aprender sobre reciclaje mientras te diviertes. Fast-Sorter, Misión Urbana y más.">
+    <!-- Descripción para SEO de la página de juegos -->
+
+    <meta name="author" content="Equipo ECOLAP">
+    <meta name="keywords" content="ECOLAP, juegos, reciclar, aprender jugando, Fast-Sorter, Misión Urbana, eco gaming">
+    <!-- Palabras clave para motores de búsqueda -->
+
+    <title>Juegos Eco | ECOLAP - Aprende Jugando</title>
+    <!-- Título que aparece en la pestaña del navegador -->
+
+    <!-- Carga de Google Fonts: Montserrat y Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos externa del proyecto ECOLAP -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Inicio del cuerpo del documento: contenido visible -->
+
+    <!-- ==========================================================
+         HEADER / BARRA DE NAVEGACIÓN ECOLAP
+         Común a todas las páginas para mantener la identidad
+         ========================================================== -->
+    <header class="ecolap-header">
+        <div class="container">
+            <nav class="ecolap-nav">
+                <!-- Logo ECOLAP con icono y texto que enlaza al inicio -->
+                <a href="index.html" class="ecolap-logo">
+                    <div class="ecolap-logo-icon">🌿</div>
+                    <div class="ecolap-logo-text">ECO<span>LAP</span></div>
+                </a>
+
+                <!-- Menú principal con los enlaces a las páginas del proyecto -->
+                <ul class="ecolap-menu" id="ecolapMenu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="aprende.html">Aprende y Recicla</a></li>
+                    <!-- La página "Juegos Eco" queda activa al estar en ella -->
+                    <li><a href="juegos.html" class="active">Juegos Eco</a></li>
+                    <li><a href="mapa.html">Ruta Recolectores</a></li>
+                    <li><a href="login.html" class="ecolap-cta-nav">Unirme a ECOLAP</a></li>
+                </ul>
+
+                <!-- Botón hamburguesa (visible solo en móviles) -->
+                <button class="ecolap-burger" id="ecolapBurger" aria-label="Abrir menú ECOLAP">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <!-- Fin del header -->
+
+    <!-- ==========================================================
+         ENCABEZADO LLAMATIVO - ECOLAP GAMES
+         Banner principal con identidad gamer-ecológica
+         ========================================================== -->
+    <section class="ecolap-hero" id="inicio-juegos">
+        <div class="container">
+            <div class="ecolap-hero-content" style="grid-template-columns: 1fr; text-align: center;">
+                <!-- Una sola columna centrada para esta portada -->
+
+                <div class="ecolap-hero-text">
+                    <!-- Badge superior con identidad gaming de ECOLAP -->
+                    <div class="ecolap-badge">
+                        <span class="ecolap-badge-dot"></span>
+                        ECOLAP Games Online
+                    </div>
+
+                    <!-- Titular principal H1 de la página de juegos -->
+                    <h1>ECOLAP <span>Games</span>: Aprende Jugando por el Planeta</h1>
+
+                    <!-- Subtítulo motivador que conecta juego con aprendizaje -->
+                    <p style="max-width: 720px; margin: 0 auto 30px;">
+                        Demuestra tus reflejos, limpia la ciudad y compite en el ranking ECOLAP. Cada partida es una lección ambiental divertida que transforma el mundo.
+                    </p>
+
+                    <!-- Botones de acceso rápido a los juegos y a más información -->
+                    <div class="ecolap-hero-buttons" style="justify-content: center;">
+                        <a href="#catalogo-juegos" class="ecolap-btn-primary">
+                            Jugar Ahora
+                            <span>🎮</span>
+                        </a>
+                        <a href="#como-jugar" class="ecolap-btn-secondary">
+                            ¿Cómo funciona?
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin del encabezado -->
+
+    <!-- ==========================================================
+         CATÁLOGO DE JUEGOS ECOLAP
+         Grid con tarjetas estilo "Eco-Gaming" para los minijuegos
+         ========================================================== -->
+    <section class="ecolap-section" id="catalogo-juegos">
+        <div class="container">
+            <div class="ecolap-section-header">
+                <span class="ecolap-section-tag">Minijuegos interactivos</span>
+                <h2 class="ecolap-section-title">Catálogo ECOLAP Games</h2>
+                <p class="ecolap-section-subtitle">Selecciona un juego y empieza tu aventura ecológica. Todos los juegos ECOLAP son gratuitos y 100% en línea.</p>
+            </div>
+
+            <!-- Grid responsivo con las tarjetas de juegos -->
+            <div class="ecolap-games-grid">
+
+                <!-- ============================================
+                     JUEGO 1: ECOLAP FAST-SORTER
+                     ============================================ -->
+                <div class="ecolap-game-card">
+                    <!-- Etiqueta superior indicando categoría del juego -->
+                    <div class="ecolap-game-image">
+                        <span class="ecolap-game-badge">Nuevo</span>
+                        <!-- Emoji representativo del juego -->
+                        <div class="ecolap-game-emoji">⚡</div>
+                    </div>
+
+                    <!-- Contenido textual de la tarjeta del juego -->
+                    <div class="ecolap-game-content">
+                        <h3>ECOLAP Fast-Sorter</h3>
+                        <!-- Título del juego -->
+
+                        <p>Clasifica la basura antes de que se agote el tiempo. Demuestra tus reflejos separando residuos en el contenedor correcto y alcanza el ranking más alto de ECOLAP.</p>
+                        <!-- Descripción de la mecánica del juego -->
+
+                        <!-- Características del juego en formato lista -->
+                        <ul style="margin-bottom: 22px; padding-left: 20px; list-style: disc; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <li>3 niveles de dificultad</li>
+                            <li>Sistema de puntuación</li>
+                            <li>Ranking online ECOLAP</li>
+                        </ul>
+
+                        <!-- Botón principal para jugar: enlaza a un juego web externo de reciclado -->
+                        <a href="https://www.cokitos.com/reciclar-basura/play/" target="_blank" rel="noopener noreferrer" class="ecolap-game-btn">
+                            Jugar Ahora 🎮
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     JUEGO 2: MISIÓN RECICLAJE URBANO
+                     ============================================ -->
+                <div class="ecolap-game-card">
+                    <div class="ecolap-game-image">
+                        <span class="ecolap-game-badge">Popular</span>
+                        <div class="ecolap-game-emoji">🚛</div>
+                    </div>
+
+                    <div class="ecolap-game-content">
+                        <h3>Misión Reciclaje Urbano</h3>
+
+                        <p>Limpia la ciudad virtual recogiendo residuos con el camión ECOLAP. Completa rutas verdes, evita obstáculos y ayuda a mantener tu comunidad 100% limpia y sostenible.</p>
+
+                        <ul style="margin-bottom: 22px; padding-left: 20px; list-style: disc; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <li>Conduce el camión ECOLAP</li>
+                            <li>10 misiones urbanas</li>
+                            <li>Modo multijugador</li>
+                        </ul>
+
+                        <!-- Enlace a simulador de manejo externo -->
+                        <a href="https://www.google.com/doodles" target="_blank" rel="noopener noreferrer" class="ecolap-game-btn">
+                            Jugar Ahora 🎮
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     JUEGO 3: ECOLAP QUIZ AMBIENTAL
+                     ============================================ -->
+                <div class="ecolap-game-card">
+                    <div class="ecolap-game-image">
+                        <span class="ecolap-game-badge">Educativo</span>
+                        <div class="ecolap-game-emoji">🧠</div>
+                    </div>
+
+                    <div class="ecolap-game-content">
+                        <h3>ECOLAP Quiz Ambiental</h3>
+
+                        <p>Pon a prueba tus conocimientos sobre reciclaje, sostenibilidad y cambio climático. Responde preguntas, gana insignias ECOLAP y demuestra que eres un experto ambiental.</p>
+
+                        <ul style="margin-bottom: 22px; padding-left: 20px; list-style: disc; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <li>+200 preguntas ECOLAP</li>
+                            <li>Sistema de insignias</li>
+                            <li>Categorías temáticas</li>
+                        </ul>
+
+                        <!-- Enlace a plataforma de quizzes en línea -->
+                        <a href="https://www.kahoot.com/" target="_blank" rel="noopener noreferrer" class="ecolap-game-btn">
+                            Jugar Ahora 🎮
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ============================================
+                     JUEGO 4: ECOLAP PLANT FOREST
+                     ============================================ -->
+                <div class="ecolap-game-card">
+                    <div class="ecolap-game-image">
+                        <span class="ecolap-game-badge">Relajado</span>
+                        <div class="ecolap-game-emoji">🌳</div>
+                    </div>
+
+                    <div class="ecolap-game-content">
+                        <h3>ECOLAP Plant Forest</h3>
+
+                        <p>Recicla en el juego y planta árboles virtuales en tiempo real. Cada acción dentro de ECOLAP Plant Forest se convierte en un árbol real plantado en alianza con ONGs ambientales.</p>
+
+                        <ul style="margin-bottom: 22px; padding-left: 20px; list-style: disc; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                            <li>Simulador de bosque</li>
+                            <li>Impacto real ambiental</li>
+                            <li>Eventos especiales</li>
+                        </ul>
+
+                        <!-- Enlace a plataforma de juegos de simulación -->
+                        <a href="https://www.miniclip.com/games" target="_blank" rel="noopener noreferrer" class="ecolap-game-btn">
+                            Jugar Ahora 🎮
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin del catálogo de juegos -->
+
+    <!-- ==========================================================
+         SECCIÓN "CÓMO FUNCIONA" - INSTRUCCIONES
+         Explica a los usuarios la dinámica de los juegos ECOLAP
+         ========================================================== -->
+    <section class="ecolap-section" id="como-jugar" style="background: var(--ecolap-gradiente-suave);">
+        <div class="container">
+            <div class="ecolap-section-header">
+                <span class="ecolap-section-tag">Guía rápida ECOLAP</span>
+                <h2 class="ecolap-section-title">¿Cómo jugar en ECOLAP?</h2>
+                <p class="ecolap-section-subtitle">Sigue estos 4 pasos para empezar tu aventura en los juegos interactivos de ECOLAP.</p>
+            </div>
+
+            <!-- Grid con los pasos numerados para jugar -->
+            <div class="ecolap-cards-grid">
+
+                <!-- Paso 1: Registro en ECOLAP -->
+                <div class="ecolap-card">
+                    <div class="ecolap-card-icon">1️⃣</div>
+                    <h3>Crea tu cuenta ECOLAP</h3>
+                    <p>Regístrate gratis en ECOLAP con tu correo electrónico. Solo te tomará un minuto y desbloqueas tu perfil de jugador ambiental.</p>
+                </div>
+
+                <!-- Paso 2: Selección de juego -->
+                <div class="ecolap-card">
+                    <div class="ecolap-card-icon">2️⃣</div>
+                    <h3>Elige tu juego favorito</h3>
+                    <p>Explora el catálogo ECOLAP Games y selecciona el minijuego que más te guste. Cada juego tiene niveles y retos diferentes.</p>
+                </div>
+
+                <!-- Paso 3: Juego y aprendizaje -->
+                <div class="ecolap-card">
+                    <div class="ecolap-card-icon">3️⃣</div>
+                    <h3>Juega y aprende</h3>
+                    <p>Diviértete mientras aprendes sobre reciclaje. Cada partida en ECOLAP te acerca a ser un agente de cambio ambiental certificado.</p>
+                </div>
+
+                <!-- Paso 4: Ranking y logros -->
+                <div class="ecolap-card">
+                    <div class="ecolap-card-icon">4️⃣</div>
+                    <h3>Sube en el ranking ECOLAP</h3>
+                    <p>Compite con la comunidad ECOLAP, gana insignias y desbloquea logros especiales. ¡Tu impacto ambiental también se mide en el juego!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la sección de instrucciones -->
+
+    <!-- ==========================================================
+         SECCIÓN DE LOGROS Y RANKING
+         Muestra los beneficios de jugar en ECOLAP
+         ========================================================== -->
+    <section class="ecolap-section" id="logros">
+        <div class="container">
+            <div class="ecolap-section-header">
+                <span class="ecolap-section-tag">Sistema de progresión ECOLAP</span>
+                <h2 class="ecolap-section-title">Logros y Ranking ECOLAP</h2>
+                <p class="ecolap-section-subtitle">Cada partida suma puntos, insignias y niveles en tu perfil de jugador ambiental ECOLAP.</p>
+            </div>
+
+            <!-- Grid con tarjetas de beneficios del sistema de logros -->
+            <div class="ecolap-hero-stats">
+
+                <div class="ecolap-stat-card">
+                    <div class="ecolap-stat-icon">🏆</div>
+                    <div class="ecolap-stat-number">+50</div>
+                    <div class="ecolap-stat-label">Insignias ECOLAP disponibles</div>
+                </div>
+
+                <div class="ecolap-stat-card">
+                    <div class="ecolap-stat-icon">⭐</div>
+                    <div class="ecolap-stat-number">Top 10</div>
+                    <div class="ecolap-stat-label">Ranking semanal ECOLAP</div>
+                </div>
+
+                <div class="ecolap-stat-card">
+                    <div class="ecolap-stat-icon">🎁</div>
+                    <div class="ecolap-stat-number">+100</div>
+                    <div class="ecolap-stat-label">Recompensas desbloqueables</div>
+                </div>
+
+                <div class="ecolap-stat-card">
+                    <div class="ecolap-stat-icon">🌍</div>
+                    <div class="ecolap-stat-number">+10K</div>
+                    <div class="ecolap-stat-label">Jugadores activos ECOLAP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la sección de logros -->
+
+    <!-- ==========================================================
+         FOOTER / PIE DE PÁGINA ECOLAP
+         Común a todas las páginas del proyecto
+         ========================================================== -->
+    <footer class="ecolap-footer">
+        <div class="container">
+            <div class="ecolap-footer-content">
+                <!-- Columna 1: marca y redes sociales -->
+                <div class="ecolap-footer-brand">
+                    <a href="index.html" class="ecolap-logo">
+                        <div class="ecolap-logo-icon">🌿</div>
+                        <div class="ecolap-logo-text">ECO<span>LAP</span></div>
+                    </a>
+                    <p>ECOLAP es la plataforma líder en gestión e incentivo del reciclaje. Transformamos comunidades a través de la innovación verde y la tecnología sostenible.</p>
+                    <div class="ecolap-footer-social">
+                        <a href="#" class="ecolap-social-link" aria-label="Facebook ECOLAP">f</a>
+                        <a href="#" class="ecolap-social-link" aria-label="Twitter ECOLAP">𝕏</a>
+                        <a href="#" class="ecolap-social-link" aria-label="Instagram ECOLAP">📷</a>
+                        <a href="#" class="ecolap-social-link" aria-label="LinkedIn ECOLAP">in</a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: navegación principal -->
+                <div class="ecolap-footer-col">
+                    <h4>ECOLAP</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="aprende.html">Aprende y Recicla</a></li>
+                        <li><a href="juegos.html">Juegos Eco</a></li>
+                        <li><a href="mapa.html">Ruta Recolectores</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: recursos adicionales -->
+                <div class="ecolap-footer-col">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="aprende.html#guias">Guías ECOLAP</a></li>
+                        <li><a href="#como-jugar">Tutoriales</a></li>
+                        <li><a href="#logros">Ranking</a></li>
+                        <li><a href="#">Blog Verde</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: contacto y soporte -->
+                <div class="ecolap-footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:contacto@ecolap.com">contacto@ecolap.com</a></li>
+                        <li><a href="#">Soporte ECOLAP</a></li>
+                        <li><a href="#">Alianzas</a></li>
+                        <li><a href="#">Prensa</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Barra inferior con copyright y créditos -->
+            <div class="ecolap-footer-bottom">
+                <p>© 2026 <span>ECOLAP</span>. Todos los derechos reservados. Plataforma oficial de gestión ambiental.</p>
+                <p>Desarrollado con 💚 para la <span>propuesta oficial ECOLAP</span></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Fin del footer -->
+
+    <!-- ==========================================================
+         SCRIPT JAVASCRIPT
+         Controla la apertura/cierre del menú móvil hamburguesa
+         ========================================================== -->
+    <script>
+        // Referencias a los elementos del DOM
+        const burger = document.getElementById('ecolapBurger');
+        const menu = document.getElementById('ecolapMenu');
+
+        // Toggle del menú móvil al hacer click en el botón hamburguesa
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        // Cierra el menú móvil al hacer click en cualquier enlace
+        document.querySelectorAll('.ecolap-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
