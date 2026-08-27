@@ -28,6 +28,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Hoja de estilos externa del proyecto ECOLAP -->
+    <!-- Icono de la pestaña del navegador (favicon) con el logo oficial ECOLAP -->
+    <link rel="icon" type="image/png" href="../Img/ecolap.png">
+    <link rel="apple-touch-icon" href="../Img/ecolap.png">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -43,7 +47,7 @@
             <nav class="ecolap-nav">
                 <!-- Logo ECOLAP con icono y texto que enlaza al inicio -->
                 <a href="index.html" class="ecolap-logo">
-                    <div class="ecolap-logo-icon">🌿</div>
+                    <div class="ecolap-logo-icon"><img src="../Img/ecolap.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                     <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                 </a>
 
@@ -143,7 +147,7 @@
                         <!-- Descripción de la mecánica del juego -->
 
                         <!-- Características del juego en formato lista -->
-                        <ul style="margin-bottom: 22px; padding-left: 20px; list-style: disc; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                        <ul>
                             <li>3 niveles de dificultad</li>
                             <li>Sistema de puntuación</li>
                             <li>Ranking online ECOLAP</li>
@@ -170,7 +174,7 @@
 
                         <p>Limpia la ciudad virtual recogiendo residuos con el camión ECOLAP. Completa rutas verdes, evita obstáculos y ayuda a mantener tu comunidad 100% limpia y sostenible.</p>
 
-                        <ul style="margin-bottom: 22px; padding-left: 20px; list-style: disc; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                        <ul>
                             <li>Conduce el camión ECOLAP</li>
                             <li>10 misiones urbanas</li>
                             <li>Modo multijugador</li>
@@ -197,7 +201,7 @@
 
                         <p>Pon a prueba tus conocimientos sobre reciclaje, sostenibilidad y cambio climático. Responde preguntas, gana insignias ECOLAP y demuestra que eres un experto ambiental.</p>
 
-                        <ul style="margin-bottom: 22px; padding-left: 20px; list-style: disc; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                        <ul>
                             <li>+200 preguntas ECOLAP</li>
                             <li>Sistema de insignias</li>
                             <li>Categorías temáticas</li>
@@ -224,7 +228,7 @@
 
                         <p>Recicla en el juego y planta árboles virtuales en tiempo real. Cada acción dentro de ECOLAP Plant Forest se convierte en un árbol real plantado en alianza con ONGs ambientales.</p>
 
-                        <ul style="margin-bottom: 22px; padding-left: 20px; list-style: disc; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+                        <ul>
                             <li>Simulador de bosque</li>
                             <li>Impacto real ambiental</li>
                             <li>Eventos especiales</li>
@@ -245,7 +249,7 @@
          SECCIÓN "CÓMO FUNCIONA" - INSTRUCCIONES
          Explica a los usuarios la dinámica de los juegos ECOLAP
          ========================================================== -->
-    <section class="ecolap-section" id="como-jugar" style="background: var(--ecolap-gradiente-suave);">
+    <section class="ecolap-section" id="como-jugar">
         <div class="container">
             <div class="ecolap-section-header">
                 <span class="ecolap-section-tag">Guía rápida ECOLAP</span>
@@ -341,7 +345,7 @@
                 <!-- Columna 1: marca y redes sociales -->
                 <div class="ecolap-footer-brand">
                     <a href="index.html" class="ecolap-logo">
-                        <div class="ecolap-logo-icon">🌿</div>
+                        <div class="ecolap-logo-icon"><img src="../Img/ecolap.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                         <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                     </a>
                     <p>ECOLAP es la plataforma líder en gestión e incentivo del reciclaje. Transformamos comunidades a través de la innovación verde y la tecnología sostenible.</p>
@@ -397,28 +401,9 @@
     <!-- Fin del footer -->
 
     <!-- ==========================================================
-         SCRIPT JAVASCRIPT
-         Controla la apertura/cierre del menú móvil hamburguesa
+         SCRIPT JAVASCRIPT compartido (app.js)
          ========================================================== -->
-    <script>
-        // Referencias a los elementos del DOM
-        const burger = document.getElementById('ecolapBurger');
-        const menu = document.getElementById('ecolapMenu');
-
-        // Toggle del menú móvil al hacer click en el botón hamburguesa
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('active');
-            menu.classList.toggle('active');
-        });
-
-        // Cierra el menú móvil al hacer click en cualquier enlace
-        document.querySelectorAll('.ecolap-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                burger.classList.remove('active');
-                menu.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>

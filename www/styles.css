@@ -1,159 +1,183 @@
 /* ===================================================
    ECOLAP - Hoja de Estilos Principal
    Plataforma para la gestión e incentivo del reciclaje
-   Paleta: Verde esmeralda (#00A86B), Verde hoja (#2ECC71),
-           Verde oscuro (#1B4D3E), Fondo claro (#F4F9F5),
-           Blanco (#FFFFFF), Acento Neón Eco (#00FF87)
+   Diseño: Eco-Tech · Glassmorphism · Futurista
+   Paleta:
+     Esmeralda   #00A86B
+     Hoja        #2ECC71
+     Neón Eco    #00FF87
+     Oscuro      #0B1D16
+     Profundo    #051410
+     Cristal     rgba(255,255,255,0.06)
    =================================================== */
 
 
 /* ==========================================================
-   1. VARIABLES CSS (Custom Properties)
-   ----------------------------------------------------------
-   Centralizamos todos los colores, fuentes y valores
-   reutilizables para mantener consistencia en todo el sitio
-   y facilitar cambios globales desde un solo lugar.
+   1. VARIABLES CSS
    ========================================================== */
 :root {
     /* --- Colores primarios ECOLAP --- */
-    --ecolap-esmeralda: #00A86B;   /* Verde principal, CTAs y acentos */
-    --ecolap-hoja: #2ECC71;        /* Verde secundario, hover y detalles */
-    --ecolap-oscuro: #1B4D3E;      /* Verde oscuro para textos y footer */
-    --ecolap-fondo: #F4F9F5;       /* Fondo claro eco para secciones */
-    --ecolap-blanco: #FFFFFF;      /* Blanco puro para tarjetas y header */
-    --ecolap-neon: #00FF87;        /* Acento neón para highlights */
+    --ecolap-esmeralda: #00A86B;
+    --ecolap-hoja: #2ECC71;
+    --ecolap-oscuro: #0B1D16;
+    --ecolap-profundo: #051410;
+    --ecolap-fondo: #F4F9F5;
+    --ecolap-blanco: #FFFFFF;
+    --ecolap-neon: #00FF87;
 
-    /* --- Variaciones y derivados --- */
-    --ecolap-oscuro-claro: #2a6a55;        /* Verde oscuro más claro para textos secundarios */
-    --ecolap-gris-texto: #5a7a6e;          /* Gris verdoso para textos descriptivos */
-    --ecolap-sombra-suave: rgba(27, 77, 62, 0.10);   /* Sombra ligera */
-    --ecolap-sombra-media: rgba(27, 77, 62, 0.18);   /* Sombra media */
-    --ecolap-sombra-fuerte: rgba(27, 77, 62, 0.25);  /* Sombra pronunciada */
-    --ecolap-sombra-verde: rgba(0, 168, 107, 0.35);  /* Sombra con tono verde */
-    --ecolap-overlay-claro: rgba(0, 168, 107, 0.08); /* Fondo translúcido para badges */
-    --ecolap-overlay-medio: rgba(0, 168, 107, 0.15); /* Fondo translúcido medio */
+    /* --- Acentos futuristas --- */
+    --ecolap-cyan: #5BFFD1;
+    --ecolap-violeta: #7C5BFF;
+    --ecolap-arena: #B8FFD8;
+
+    /* --- Texto sobre cristal / oscuro --- */
+    --ecolap-texto-claro: rgba(255, 255, 255, 0.92);
+    --ecolap-texto-medio: rgba(255, 255, 255, 0.70);
+    --ecolap-texto-suave: rgba(255, 255, 255, 0.55);
+
+    /* --- Vidrio / glassmorphism --- */
+    --vidrio-bg: rgba(255, 255, 255, 0.06);
+    --vidrio-bg-hover: rgba(255, 255, 255, 0.10);
+    --vidrio-bg-claro: rgba(255, 255, 255, 0.85);
+    --vidrio-borde: rgba(0, 255, 135, 0.22);
+    --vidrio-borde-fuerte: rgba(0, 255, 135, 0.45);
+    --vidrio-borde-claro: rgba(255, 255, 255, 0.18);
+
+    /* --- Sombras neón / glow --- */
+    --ecolap-sombra-suave: rgba(11, 29, 22, 0.10);
+    --ecolap-sombra-media: rgba(11, 29, 22, 0.22);
+    --ecolap-sombra-fuerte: rgba(11, 29, 22, 0.40);
+    --ecolap-sombra-verde: rgba(0, 168, 107, 0.40);
+    --ecolap-sombra-neon: rgba(0, 255, 135, 0.55);
+    --ecolap-glow-suave: 0 0 24px rgba(0, 255, 135, 0.20);
+    --ecolap-glow-fuerte: 0 0 36px rgba(0, 255, 135, 0.45);
+
+    /* --- Overlays --- */
+    --ecolap-overlay-claro: rgba(0, 168, 107, 0.10);
+    --ecolap-overlay-medio: rgba(0, 168, 107, 0.20);
 
     /* --- Gradientes oficiales ECOLAP --- */
-    --ecolap-gradiente-principal: linear-gradient(135deg, #00A86B 0%, #2ECC71 50%, #00FF87 100%);
+    --ecolap-gradiente-principal: linear-gradient(135deg, #00A86B 0%, #2ECC71 55%, #00FF87 100%);
     --ecolap-gradiente-suave: linear-gradient(135deg, #F4F9F5 0%, #E8F5EC 100%);
-    --ecolap-gradiente-oscuro: linear-gradient(135deg, #1B4D3E 0%, #00A86B 100%);
+    --ecolap-gradiente-oscuro: linear-gradient(135deg, #051410 0%, #0B1D16 50%, #0F3A2A 100%);
+    --ecolap-gradiente-vidrio: linear-gradient(135deg, rgba(0, 168, 107, 0.20) 0%, rgba(0, 255, 135, 0.05) 100%);
+    --ecolap-gradiente-neon: linear-gradient(135deg, #00FF87 0%, #5BFFD1 100%);
+    --ecolap-gradiente-mesh:
+        radial-gradient(at 0% 0%, rgba(0, 255, 135, 0.20) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(124, 91, 255, 0.18) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 168, 107, 0.22) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(46, 204, 113, 0.18) 0px, transparent 50%);
 
     /* --- Tipografías --- */
     --fuente-principal: 'Montserrat', 'Poppins', sans-serif;
     --fuente-titulos: 'Poppins', sans-serif;
 
-    /* --- Espaciados y radios --- */
-    --radio-pequeno: 8px;
-    --radio-medio: 16px;
-    --radio-grande: 24px;
-    --radio-completo: 50px;
+    /* --- Radios / espaciado --- */
+    --radio-xs: 8px;
+    --radio-sm: 14px;
+    --radio-md: 20px;
+    --radio-lg: 28px;
+    --radio-pill: 50px;
 
-    /* --- Transiciones --- */
+    /* --- Transiciones / easings --- */
     --transicion-base: all 0.3s ease;
+    --transicion-rapida: all 0.18s ease;
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-suave: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
 /* ==========================================================
    2. RESET Y ESTILOS BASE
-   ----------------------------------------------------------
-   Normalizamos el comportamiento por defecto de los
-   navegadores para tener una base sólida y predecible.
    ========================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Elimina márgenes y paddings por defecto y define box-sizing */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Activa el scroll suave al navegar por anclas internas */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Compensa la altura del header sticky */
+    scroll-padding-top: 90px;
 }
 
-/* Estilos base del cuerpo: fuente, color y fondo */
 body {
     font-family: var(--fuente-principal);
     color: var(--ecolap-oscuro);
-    background-color: var(--ecolap-blanco);
+    background: var(--ecolap-gradiente-oscuro);
+    background-attachment: fixed;
     line-height: 1.6;
-    overflow-x: hidden; /* Evita scroll horizontal accidental */
-    -webkit-font-smoothing: antialiased; /* Mejora renderizado de fuentes */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
 }
 
-/* Títulos usan la tipografía Poppins con peso bold */
+/* Páginas claras (index, aprende, juegos, mapa) usan fondo claro */
+body.ecolap-light {
+    background:
+        var(--ecolap-gradiente-mesh),
+        linear-gradient(135deg, #F4F9F5 0%, #E8F5EC 100%);
+    background-attachment: fixed;
+    color: var(--ecolap-oscuro);
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
     font-weight: 700;
     line-height: 1.2;
-    color: var(--ecolap-oscuro);
-}
-
-/* Enlaces heredan color y eliminan subrayado por defecto */
-a {
-    text-decoration: none;
     color: inherit;
-    transition: var(--transicion-base);
+    letter-spacing: -0.5px;
 }
 
-/* Imágenes responsivas por defecto */
-img {
-    max-width: 100%;
-    display: block;
-}
+a { text-decoration: none; color: inherit; transition: var(--transicion-base); }
+img { max-width: 100%; display: block; }
+ul, ol { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-/* Listas sin viñetas por defecto (se reactivan según necesidad) */
-ul, ol {
-    list-style: none;
+/* Scrollbar personalizada eco */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgba(11, 29, 22, 0.5); }
+::-webkit-scrollbar-thumb {
+    background: var(--ecolap-gradiente-principal);
+    border-radius: 10px;
+    border: 2px solid rgba(11, 29, 22, 0.5);
 }
-
-/* Botones sin estilos nativos para personalizarlos completamente */
-button {
-    font-family: inherit;
-    cursor: pointer;
-    border: none;
-    background: none;
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ecolap-gradiente-neon);
+    box-shadow: var(--ecolap-glow-suave);
 }
 
 
 /* ==========================================================
-   3. CONTENEDOR PRINCIPAL
-   ----------------------------------------------------------
-   Define el ancho máximo del contenido y los márgenes
-   laterales automáticos. Usado en todas las secciones.
+   3. CONTENEDOR
    ========================================================== */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;            /* Centra horizontalmente */
-    padding: 0 24px;           /* Espaciado lateral en móviles */
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
     width: 100%;
 }
 
 
 /* ==========================================================
-   4. ESTILOS DEL HEADER (BARRA DE NAVEGACIÓN)
-   ----------------------------------------------------------
-   Header sticky con efecto de cristal esmerilado (glassmorphism)
-   que permanece visible al hacer scroll. Contiene el logo
-   ECOLAP, el menú de navegación y el botón CTA principal.
+   4. HEADER / NAVEGACIÓN (GLASSMORPHISM)
    ========================================================== */
-
-/* --- Contenedor principal del header --- */
 .ecolap-header {
-    position: sticky;          /* Se mantiene fijo al hacer scroll */
+    position: sticky;
     top: 0;
-    z-index: 1000;             /* Por encima de todos los elementos */
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);              /* Efecto cristal esmerilado */
-    -webkit-backdrop-filter: blur(12px);      /* Compatibilidad Safari */
-    box-shadow: 0 2px 20px var(--ecolap-sombra-suave);
-    transition: var(--transicion-base);
+    z-index: 1000;
+    /* Fondo oscuro casi sólido y uniforme: sin transparencias que
+       dejen pasar fondos claros ni brillos blancos */
+    background: rgba(5, 20, 16, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 135, 0.28);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- Barra de navegación interna (flexbox) --- */
+.ecolap-header.scrolled {
+    background: rgba(5, 20, 16, 0.99);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
 .ecolap-nav {
     display: flex;
     align-items: center;
@@ -162,107 +186,113 @@ button {
     gap: 20px;
 }
 
-/* --- Logotipo ECOLAP con icono y texto --- */
+/* Logo */
 .ecolap-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-family: var(--fuente-titulos);
     font-weight: 800;
-    font-size: 1.6rem;
-    color: var(--ecolap-oscuro);
+    font-size: 1.55rem;
+    color: var(--ecolap-blanco);
     transition: var(--transicion-base);
 }
+.ecolap-logo:hover { transform: scale(1.04); }
 
-/* Ligera escala al pasar el cursor sobre el logo */
-.ecolap-logo:hover {
-    transform: scale(1.04);
-}
-
-/* Icono cuadrado con gradiente del logo */
 .ecolap-logo-icon {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     background: var(--ecolap-gradiente-principal);
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.4rem;
-    box-shadow: 0 4px 12px var(--ecolap-sombra-verde);
+    box-shadow:
+        0 8px 22px var(--ecolap-sombra-verde),
+        0 0 24px rgba(0, 255, 135, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    animation: ecolap-logo-pulse 3.5s ease-in-out infinite;
+    overflow: hidden;
 }
 
-/* Texto del logo con acento de color en "LAP" */
-.ecolap-logo-text {
-    letter-spacing: -0.5px;
+/* Imagen del logo ECOLAP dentro del icono */
+.ecolap-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
 }
 
+.ecolap-logo-text { letter-spacing: -0.5px; }
 .ecolap-logo-text span {
-    color: var(--ecolap-esmeralda);
+    color: var(--ecolap-neon);
+    text-shadow: 0 0 14px rgba(0, 255, 135, 0.55);
 }
 
-/* --- Lista del menú de navegación --- */
+/* Menú */
 .ecolap-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 30px;
 }
-
-/* Enlaces individuales del menú */
 .ecolap-menu a {
     font-weight: 500;
     font-size: 0.95rem;
-    color: var(--ecolap-oscuro);
-    position: relative;       /* Necesario para la línea animada */
+    color: var(--ecolap-texto-medio);
+    position: relative;
     padding: 6px 2px;
-    transition: var(--transicion-base);
+    /* Subrayado neón estable: se anima con background-size (sin pseudo-elementos
+       que crezcan/encojan y provoquen parpadeo al mover el cursor entre items) */
+    background-image: linear-gradient(90deg, var(--ecolap-neon), var(--ecolap-cyan));
+    background-repeat: no-repeat;
+    background-position: 50% calc(100% - 1px);
+    background-size: 0% 2px;
+    border-radius: 2px;
+    will-change: background-size;
+    transition: color 0.22s ease, background-size 0.32s var(--ease-suave);
+}
+.ecolap-menu a:hover,
+.ecolap-menu a.active,
+.ecolap-menu a:focus-visible {
+    background-size: 100% 2px;
+}
+.ecolap-menu a:hover,
+.ecolap-menu a:focus-visible {
+    color: var(--ecolap-blanco);
+}
+.ecolap-menu a.active {
+    color: var(--ecolap-neon);
+    text-shadow: 0 0 12px rgba(0, 255, 135, 0.45);
 }
 
-/* Línea inferior animada que aparece al pasar el cursor */
-.ecolap-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--ecolap-gradiente-principal);
-    transition: width 0.3s ease;
+/* El CTA tiene su propio fondo con gradiente: nunca recibe el subrayado */
+.ecolap-menu a.ecolap-cta-nav {
+    background-image: none;
 }
 
-/* Hover: color verde y línea expandida */
-.ecolap-menu a:hover {
-    color: var(--ecolap-esmeralda);
-}
-
-.ecolap-menu a:hover::after {
-    width: 100%;
-}
-
-/* --- Botón CTA destacado en el menú (Unirme a ECOLAP) --- */
+/* CTA nav */
 .ecolap-cta-nav {
     background: var(--ecolap-gradiente-principal);
     color: var(--ecolap-blanco) !important;
     padding: 12px 24px;
-    border-radius: var(--radio-completo);
-    font-weight: 600;
-    box-shadow: 0 4px 14px var(--ecolap-sombra-verde);
-    transition: var(--transicion-base);
+    border-radius: var(--radio-pill);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    box-shadow:
+        0 8px 22px var(--ecolap-sombra-verde),
+        0 0 18px rgba(0, 255, 135, 0.30);
+    transition: transform 0.3s var(--ease-suave), box-shadow 0.3s ease;
 }
-
-/* Oculta la línea animada en el CTA porque ya tiene fondo */
-.ecolap-cta-nav::after {
-    display: none;
-}
-
-/* Hover: elevación y sombra más intensa */
 .ecolap-cta-nav:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0, 168, 107, 0.45);
-    color: var(--ecolap-blanco) !important;
+    box-shadow:
+        0 14px 30px rgba(0, 168, 107, 0.55),
+        0 0 26px rgba(0, 255, 135, 0.55);
 }
 
-/* --- Botón hamburguesa para menú móvil (oculto en desktop) --- */
+/* Hamburguesa */
 .ecolap-burger {
     display: none;
     flex-direction: column;
@@ -270,68 +300,63 @@ button {
     padding: 8px;
     z-index: 1001;
 }
-
-/* Cada línea del icono hamburguesa */
 .ecolap-burger span {
     width: 26px;
     height: 3px;
-    background-color: var(--ecolap-oscuro);
+    background: var(--ecolap-neon);
     border-radius: 3px;
+    box-shadow: 0 0 8px rgba(0, 255, 135, 0.55);
     transition: var(--transicion-base);
 }
-
-/* Animación del burger cuando está activo (se transforma en X) */
-.ecolap-burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-.ecolap-burger.active span:nth-child(2) {
-    opacity: 0;
-}
-.ecolap-burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
+.ecolap-burger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.ecolap-burger.active span:nth-child(2) { opacity: 0; }
+.ecolap-burger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
 
 /* ==========================================================
-   5. SECCIÓN HERO (PORTADA PRINCIPAL)
-   ----------------------------------------------------------
-   Sección de impacto visual con titular principal, badge
-   animado, botones de acción y tarjetas de estadísticas
-   con efecto de elevación.
+   5. SECCIÓN HERO
    ========================================================== */
 .ecolap-hero {
     position: relative;
-    background: var(--ecolap-gradiente-suave);
-    padding: 100px 0 120px;
-    overflow: hidden;          /* Recorta los círculos decorativos */
+    background:
+        radial-gradient(ellipse at top right, rgba(0, 255, 135, 0.20), transparent 60%),
+        radial-gradient(ellipse at bottom left, rgba(124, 91, 255, 0.18), transparent 60%),
+        var(--ecolap-gradiente-oscuro);
+    color: var(--ecolap-blanco);
+    padding: 110px 0 130px;
+    overflow: hidden;
 }
 
-/* Círculos decorativos de fondo con efecto radial */
-.ecolap-hero::before {
-    content: '';
-    position: absolute;
-    top: -150px;
-    right: -150px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(46, 204, 113, 0.25) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: 0;
+body.ecolap-light .ecolap-hero {
+    background:
+        radial-gradient(ellipse at top right, rgba(0, 168, 107, 0.18), transparent 60%),
+        radial-gradient(ellipse at bottom left, rgba(46, 204, 113, 0.15), transparent 60%),
+        linear-gradient(135deg, #ffffff 0%, #F4F9F5 100%);
+    color: var(--ecolap-oscuro);
 }
 
+.ecolap-hero::before,
 .ecolap-hero::after {
     content: '';
     position: absolute;
-    bottom: -200px;
-    left: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0, 168, 107, 0.18) 0%, transparent 70%);
     border-radius: 50%;
+    filter: blur(60px);
     z-index: 0;
+    pointer-events: none;
+}
+.ecolap-hero::before {
+    top: -180px; right: -180px;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(0, 255, 135, 0.35) 0%, transparent 70%);
+    animation: ecolap-blob 18s ease-in-out infinite;
+}
+.ecolap-hero::after {
+    bottom: -220px; left: -200px;
+    width: 620px; height: 620px;
+    background: radial-gradient(circle, rgba(124, 91, 255, 0.28) 0%, transparent 70%);
+    animation: ecolap-blob 22s ease-in-out infinite reverse;
 }
 
-/* Grid de dos columnas: texto a la izquierda, stats a la derecha */
 .ecolap-hero-content {
     position: relative;
     z-index: 1;
@@ -341,96 +366,130 @@ button {
     align-items: center;
 }
 
-/* Contenedor del texto del hero con animación de entrada */
 .ecolap-hero-text {
-    animation: ecolap-fade-in-up 0.8s ease;
+    animation: ecolap-fade-in-up 0.9s var(--ease-suave) both;
 }
 
-/* --- Badge superior con punto pulsante --- */
+/* Badge superior neón */
 .ecolap-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background-color: var(--ecolap-overlay-claro);
-    color: var(--ecolap-esmeralda);
-    padding: 8px 18px;
-    border-radius: var(--radio-completo);
+    gap: 10px;
+    background: var(--vidrio-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--vidrio-borde);
+    color: var(--ecolap-neon);
+    padding: 9px 18px;
+    border-radius: var(--radio-pill);
     font-weight: 600;
     font-size: 0.85rem;
-    margin-bottom: 24px;
-    border: 1px solid var(--ecolap-overlay-medio);
+    margin-bottom: 26px;
+    box-shadow: 0 0 18px rgba(0, 255, 135, 0.18);
+    letter-spacing: 0.3px;
 }
 
-/* Punto verde neón que pulsa en el badge */
+body.ecolap-light .ecolap-badge {
+    background: rgba(0, 168, 107, 0.10);
+    border-color: rgba(0, 168, 107, 0.25);
+    color: var(--ecolap-esmeralda);
+}
+
 .ecolap-badge-dot {
     width: 8px;
     height: 8px;
-    background-color: var(--ecolap-neon);
+    background: var(--ecolap-neon);
     border-radius: 50%;
-    box-shadow: 0 0 8px var(--ecolap-neon);
-    animation: ecolap-pulse 1.5s infinite;
+    box-shadow: 0 0 12px var(--ecolap-neon), 0 0 22px rgba(0, 255, 135, 0.5);
+    animation: ecolap-pulse 1.6s infinite;
 }
 
-/* --- Titular principal con tamaño responsivo --- */
 .ecolap-hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-size: clamp(2.3rem, 5vw, 3.9rem);
     font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+    margin-bottom: 22px;
+    letter-spacing: -1.2px;
+    line-height: 1.05;
 }
 
-/* "ECOLAP" dentro del titular con efecto de gradiente en texto */
 .ecolap-hero h1 span {
-    background: var(--ecolap-gradiente-principal);
+    background: var(--ecolap-gradiente-neon);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+    filter: drop-shadow(0 0 18px rgba(0, 255, 135, 0.25));
 }
 
-/* Subtítulo descriptivo del hero */
 .ecolap-hero p {
     font-size: 1.15rem;
-    color: var(--ecolap-gris-texto);
-    margin-bottom: 36px;
+    color: rgba(226, 245, 234, 0.88);
+    margin-bottom: 38px;
     max-width: 540px;
 }
+body.ecolap-light .ecolap-hero p { color: rgba(27, 77, 62, 0.75); }
 
-/* --- Contenedor de los botones de acción del hero --- */
+/* Botones hero */
 .ecolap-hero-buttons {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
 }
 
-/* --- Grid de tarjetas de estadísticas (2x2) --- */
+/* Grid stats */
 .ecolap-hero-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    animation: ecolap-fade-in-up 1s ease 0.2s backwards;
+    animation: ecolap-fade-in-up 1.1s var(--ease-suave) 0.2s both;
 }
 
-/* Tarjeta individual de estadística con efecto hover */
+/* Stat cards: cristal */
 .ecolap-stat-card {
-    background-color: var(--ecolap-blanco);
+    background: var(--vidrio-bg);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
     padding: 28px 24px;
-    border-radius: var(--radio-grande);
-    box-shadow: 0 10px 30px var(--ecolap-sombra-suave);
-    border: 1px solid var(--ecolap-overlay-claro);
-    transition: var(--transicion-base);
+    border-radius: var(--radio-md);
+    border: 1px solid var(--vidrio-borde-claro);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    transition: transform 0.4s var(--ease-suave), box-shadow 0.4s var(--ease-suave), border-color 0.4s var(--ease-suave);
+    color: var(--ecolap-blanco);
+    position: relative;
+    overflow: hidden;
 }
-
-/* Hover: elevación y sombra más profunda */
+.ecolap-stat-card::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(0, 255, 135, 0.18), transparent 30%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: ecolap-spin 8s linear infinite;
+    pointer-events: none;
+}
+.ecolap-stat-card:hover::after { opacity: 1; }
 .ecolap-stat-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px var(--ecolap-sombra-fuerte);
+    border-color: var(--vidrio-borde-fuerte);
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.35),
+        0 0 28px rgba(0, 255, 135, 0.30);
 }
 
-/* Icono cuadrado de la tarjeta con gradiente */
+body.ecolap-light .ecolap-stat-card {
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--ecolap-oscuro);
+    border-color: rgba(0, 168, 107, 0.15);
+    box-shadow: 0 14px 32px rgba(11, 29, 22, 0.10);
+}
+
 .ecolap-stat-icon {
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
     background: var(--ecolap-gradiente-principal);
     border-radius: 14px;
     display: flex;
@@ -438,267 +497,349 @@ button {
     justify-content: center;
     font-size: 1.5rem;
     margin-bottom: 14px;
-    box-shadow: 0 6px 16px var(--ecolap-sombra-verde);
+    box-shadow: 0 8px 22px var(--ecolap-sombra-verde), 0 0 18px rgba(0, 255, 135, 0.30);
 }
 
-/* Número grande destacado en la tarjeta */
 .ecolap-stat-number {
     font-family: var(--fuente-titulos);
-    font-size: 2rem;
+    font-size: 2.05rem;
     font-weight: 800;
-    color: var(--ecolap-oscuro);
     margin-bottom: 4px;
+    letter-spacing: -1px;
 }
 
-/* Etiqueta descriptiva debajo del número */
 .ecolap-stat-label {
     font-size: 0.9rem;
-    color: var(--ecolap-gris-texto);
+    color: rgba(214, 245, 228, 0.88);
     font-weight: 500;
 }
+body.ecolap-light .ecolap-stat-label { color: rgba(27, 77, 62, 0.70); }
 
 
 /* ==========================================================
-   6. BOTONES DE ACCIÓN (CTAs)
-   ----------------------------------------------------------
-   Dos variantes: primario (relleno verde) y secundario
-   (contorno verde). Comparten forma de píldora y
-   animaciones suaves.
+   6. BOTONES (CTAs)
    ========================================================== */
-
-/* --- Botón primario: fondo con gradiente --- */
-.ecolap-btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--ecolap-gradiente-principal);
-    color: var(--ecolap-blanco);
-    padding: 16px 32px;
-    border-radius: var(--radio-completo);
-    font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 8px 24px var(--ecolap-sombra-verde);
-    transition: var(--transicion-base);
-}
-
-/* Hover: elevación y sombra más intensa */
-.ecolap-btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 168, 107, 0.5);
-    color: var(--ecolap-blanco);
-}
-
-/* --- Botón secundario: contorno verde sobre fondo blanco --- */
+.ecolap-btn-primary,
 .ecolap-btn-secondary {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background-color: var(--ecolap-blanco);
-    color: var(--ecolap-oscuro);
-    padding: 16px 32px;
-    border-radius: var(--radio-completo);
-    font-weight: 600;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: var(--radio-pill);
+    font-weight: 700;
     font-size: 1rem;
-    border: 2px solid var(--ecolap-esmeralda);
-    transition: var(--transicion-base);
+    letter-spacing: 0.2px;
+    transition: transform 0.3s var(--ease-suave), box-shadow 0.3s var(--ease-suave), background 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Hover: relleno verde y texto blanco */
-.ecolap-btn-secondary:hover {
-    background-color: var(--ecolap-esmeralda);
+.ecolap-btn-primary {
+    background: var(--ecolap-gradiente-principal);
     color: var(--ecolap-blanco);
+    box-shadow:
+        0 10px 28px var(--ecolap-sombra-verde),
+        0 0 22px rgba(0, 255, 135, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.10) inset;
+}
+.ecolap-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.55s ease;
+}
+.ecolap-btn-primary:hover::before { left: 100%; }
+.ecolap-btn-primary:hover {
     transform: translateY(-3px);
+    color: var(--ecolap-blanco);
+    box-shadow:
+        0 16px 36px rgba(0, 168, 107, 0.55),
+        0 0 30px rgba(0, 255, 135, 0.55);
+}
+
+.ecolap-btn-secondary {
+    background: var(--vidrio-bg);
+    color: var(--ecolap-blanco);
+    border: 1.5px solid var(--vidrio-borde);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.ecolap-btn-secondary:hover {
+    background: rgba(0, 255, 135, 0.15);
+    border-color: var(--ecolap-neon);
+    color: var(--ecolap-neon);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 255, 135, 0.30);
+}
+body.ecolap-light .ecolap-btn-secondary {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--ecolap-oscuro);
+    border-color: rgba(0, 168, 107, 0.35);
+}
+body.ecolap-light .ecolap-btn-secondary:hover {
+    background: var(--ecolap-esmeralda);
+    color: var(--ecolap-blanco);
+    border-color: var(--ecolap-esmeralda);
 }
 
 
 /* ==========================================================
-   7. SECCIONES GENERALES Y ENCABEZADOS
-   ----------------------------------------------------------
-   Estilos compartidos por las secciones de contenido
-   (Aprende, Juegos, Mapa): padding, títulos y subtítulos.
+   7. SECCIONES GENERALES
    ========================================================== */
-
-/* Espaciado vertical estándar para todas las secciones */
 .ecolap-section {
-    padding: 90px 0;
+    padding: 100px 0;
+    position: relative;
 }
+body.ecolap-light .ecolap-section { color: var(--ecolap-oscuro); }
 
-/* Encabezado de sección centrado con texto limitado */
 .ecolap-section-header {
     text-align: center;
-    max-width: 720px;
+    max-width: 740px;
     margin: 0 auto 60px;
 }
 
-/* Etiqueta superior (eyebrow) de cada sección */
 .ecolap-section-tag {
     display: inline-block;
-    background-color: var(--ecolap-overlay-claro);
-    color: var(--ecolap-esmeralda);
-    padding: 6px 18px;
-    border-radius: var(--radio-completo);
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-bottom: 16px;
-    letter-spacing: 0.5px;
+    background: var(--vidrio-bg);
+    border: 1px solid var(--vidrio-borde);
+    color: var(--ecolap-neon);
+    padding: 7px 18px;
+    border-radius: var(--radio-pill);
+    font-weight: 700;
+    font-size: 0.78rem;
+    margin-bottom: 18px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+body.ecolap-light .ecolap-section-tag {
+    background: rgba(0, 168, 107, 0.10);
+    border-color: rgba(0, 168, 107, 0.25);
+    color: var(--ecolap-esmeralda);
 }
 
-/* Título principal de la sección con tamaño fluido */
 .ecolap-section-title {
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    margin-bottom: 18px;
+    letter-spacing: -1px;
 }
 
-/* Subtítulo descriptivo en gris verdoso */
+body:not(.ecolap-light) .ecolap-section-title { color: var(--ecolap-blanco); }
+
 .ecolap-section-subtitle {
     font-size: 1.1rem;
-    color: var(--ecolap-gris-texto);
-    max-width: 600px;
+    color: rgba(226, 245, 234, 0.88);
+    max-width: 620px;
     margin: 0 auto;
 }
+body.ecolap-light .ecolap-section-subtitle { color: rgba(27, 77, 62, 0.75); }
 
 
 /* ==========================================================
    8. TARJETAS DE CONTENIDO (CARDS)
-   ----------------------------------------------------------
-   Estilo base para todas las tarjetas informativas con
-   borde superior animado, elevación al hover y patrón
-   coherente con la identidad ECOLAP.
    ========================================================== */
-
-/* Grid responsivo que organiza las tarjetas */
 .ecolap-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 28px;
 }
 
-/* --- Tarjeta individual --- */
 .ecolap-card {
-    background-color: var(--ecolap-blanco);
-    border-radius: var(--radio-grande);
-    padding: 36px 30px;
-    box-shadow: 0 8px 30px var(--ecolap-sombra-suave);
-    border: 1px solid var(--ecolap-overlay-claro);
-    transition: var(--transicion-base);
+    background: var(--vidrio-bg);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border-radius: var(--radio-md);
+    padding: 38px 32px;
+    border: 1px solid var(--vidrio-borde-claro);
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.30),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    transition: transform 0.4s var(--ease-suave), border-color 0.4s ease, box-shadow 0.4s var(--ease-suave);
     position: relative;
-    overflow: hidden;          /* Recorta la línea superior animada */
+    overflow: hidden;
+    color: var(--ecolap-blanco);
 }
 
-/* Línea superior con gradiente que se expande al hacer hover */
+body.ecolap-light .ecolap-card {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--ecolap-oscuro);
+    border-color: rgba(0, 168, 107, 0.15);
+    box-shadow: 0 12px 30px rgba(11, 29, 22, 0.08);
+}
+
+/* Borde superior neón animado */
 .ecolap-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--ecolap-gradiente-principal);
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--ecolap-gradiente-neon);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s var(--ease-suave);
+    box-shadow: 0 0 18px var(--ecolap-neon);
 }
 
-/* Hover: elevación pronunciada y línea expandida */
+/* Halo interno al hacer hover */
+.ecolap-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(0, 255, 135, 0.10), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
 .ecolap-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px var(--ecolap-sombra-fuerte);
+    border-color: var(--vidrio-borde-fuerte);
+    box-shadow:
+        0 26px 60px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 255, 135, 0.30);
 }
+.ecolap-card:hover::before { transform: scaleX(1); }
+.ecolap-card:hover::after { opacity: 1; }
 
-.ecolap-card:hover::before {
-    transform: scaleX(1);
-}
-
-/* Icono cuadrado de la tarjeta */
 .ecolap-card-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--ecolap-gradiente-suave);
+    width: 72px;
+    height: 72px;
+    background: var(--ecolap-gradiente-vidrio);
+    border: 1px solid var(--vidrio-borde);
     border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     margin-bottom: 22px;
-    transition: var(--transicion-base);
+    transition: transform 0.45s var(--ease-bounce), background 0.4s ease, box-shadow 0.4s ease;
 }
-
-/* Hover: icono se rellena con gradiente y rota ligeramente */
 .ecolap-card:hover .ecolap-card-icon {
     background: var(--ecolap-gradiente-principal);
-    transform: rotate(-8deg) scale(1.05);
+    transform: rotate(-8deg) scale(1.08);
+    box-shadow: 0 12px 28px var(--ecolap-sombra-verde), 0 0 24px rgba(0, 255, 135, 0.40);
 }
 
-/* Título de la tarjeta */
 .ecolap-card h3 {
     font-size: 1.35rem;
     margin-bottom: 12px;
 }
 
-/* Texto descriptivo de la tarjeta */
 .ecolap-card p {
-    color: var(--ecolap-gris-texto);
+    color: rgba(226, 245, 234, 0.85);
     font-size: 0.95rem;
     margin-bottom: 22px;
 }
+body.ecolap-light .ecolap-card p { color: rgba(27, 77, 62, 0.75); }
 
-/* Enlace tipo "pill" al final de cada tarjeta */
+.ecolap-card ul {
+    margin-bottom: 24px;
+    padding-left: 0;
+    color: var(--ecolap-texto-medio);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.ecolap-card ul li {
+    padding-left: 26px;
+    position: relative;
+}
+.ecolap-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--ecolap-neon);
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.55);
+}
+
 .ecolap-card-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--ecolap-esmeralda);
-    font-weight: 600;
+    color: var(--ecolap-neon);
+    font-weight: 700;
     font-size: 0.95rem;
-    padding: 10px 20px;
-    background-color: var(--ecolap-overlay-claro);
-    border-radius: var(--radio-completo);
+    padding: 11px 22px;
+    background: var(--vidrio-bg);
+    border: 1px solid var(--vidrio-borde);
+    border-radius: var(--radio-pill);
     transition: var(--transicion-base);
+    backdrop-filter: blur(8px);
 }
-
-/* Hover: relleno verde y desplazamiento de la flecha */
+body.ecolap-light .ecolap-card-link {
+    background: rgba(0, 168, 107, 0.10);
+    border-color: rgba(0, 168, 107, 0.25);
+    color: var(--ecolap-esmeralda);
+}
 .ecolap-card-link:hover {
-    background-color: var(--ecolap-esmeralda);
+    background: var(--ecolap-gradiente-principal);
     color: var(--ecolap-blanco);
+    border-color: transparent;
     gap: 12px;
+    box-shadow: 0 10px 24px var(--ecolap-sombra-verde), 0 0 20px rgba(0, 255, 135, 0.40);
 }
 
 
 /* ==========================================================
-   9. SECCIÓN DE JUEGOS (ECO-GAMING)
-   ----------------------------------------------------------
-   Tarjetas con tema oscuro y vibrante que contrastan con
-   el resto de la interfaz para destacar los juegos.
+   9. JUEGOS (ECO-GAMING / GLASS DARK)
    ========================================================== */
 .ecolap-games {
-    background: var(--ecolap-gradiente-suave);
+    background:
+        radial-gradient(ellipse at top, rgba(0, 255, 135, 0.12), transparent 60%),
+        linear-gradient(180deg, #0B1D16 0%, #051410 100%);
+    color: var(--ecolap-blanco);
+}
+body.ecolap-light .ecolap-games {
+    background:
+        radial-gradient(ellipse at top, rgba(0, 168, 107, 0.10), transparent 60%),
+        linear-gradient(180deg, #F4F9F5 0%, #E8F5EC 100%);
+    color: var(--ecolap-oscuro);
 }
 
-/* Grid específico para tarjetas de juegos */
 .ecolap-games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
-/* Tarjeta de juego con fondo oscuro */
 .ecolap-game-card {
-    background: var(--ecolap-oscuro);
-    border-radius: var(--radio-grande);
+    background: linear-gradient(160deg, rgba(0, 255, 135, 0.10) 0%, rgba(11, 29, 22, 0.65) 60%);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: var(--radio-lg);
     overflow: hidden;
-    box-shadow: 0 10px 35px var(--ecolap-sombra-fuerte);
-    transition: var(--transicion-base);
+    border: 1px solid var(--vidrio-borde);
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 255, 135, 0.18);
+    transition: transform 0.4s var(--ease-suave), box-shadow 0.4s var(--ease-suave), border-color 0.4s ease;
+    color: var(--ecolap-blanco);
+    position: relative;
 }
-
-/* Hover: elevación sutil y escala ligera */
+.ecolap-game-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(0, 255, 135, 0.5), transparent 40%, rgba(124, 91, 255, 0.4));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.7;
+}
 .ecolap-game-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 25px 50px var(--ecolap-sombra-fuerte);
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(0, 255, 135, 0.40);
+    border-color: var(--vidrio-borde-fuerte);
 }
 
-/* Área superior con gradiente (banner visual del juego) */
 .ecolap-game-image {
     height: 180px;
     background: var(--ecolap-gradiente-principal);
@@ -708,113 +849,126 @@ button {
     justify-content: center;
     overflow: hidden;
 }
-
-/* Círculos decorativos dentro del banner del juego */
 .ecolap-game-image::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -30%;
-    width: 250px;
-    height: 250px;
-    background: rgba(255, 255, 255, 0.15);
+    top: -50%; right: -30%;
+    width: 260px; height: 260px;
+    background: rgba(255, 255, 255, 0.18);
     border-radius: 50%;
+    filter: blur(8px);
 }
-
 .ecolap-game-image::after {
     content: '';
     position: absolute;
-    bottom: -40%;
-    left: -20%;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.10);
+    bottom: -40%; left: -20%;
+    width: 220px; height: 220px;
+    background: rgba(0, 0, 0, 0.25);
     border-radius: 50%;
+    filter: blur(10px);
 }
 
-/* Emoji/icono principal del juego */
 .ecolap-game-emoji {
     font-size: 4.5rem;
     position: relative;
     z-index: 1;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4));
+    transition: transform 0.4s var(--ease-bounce);
 }
+.ecolap-game-card:hover .ecolap-game-emoji { transform: scale(1.15) rotate(-6deg); }
 
-/* Etiqueta flotante (Nuevo, Popular, etc.) */
 .ecolap-game-badge {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    background-color: var(--ecolap-neon);
+    top: 16px; right: 16px;
+    background: var(--ecolap-neon);
     color: var(--ecolap-oscuro);
     padding: 6px 14px;
-    border-radius: var(--radio-completo);
-    font-size: 0.75rem;
-    font-weight: 700;
+    border-radius: var(--radio-pill);
+    font-size: 0.72rem;
+    font-weight: 800;
     z-index: 2;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
+    box-shadow: 0 0 18px rgba(0, 255, 135, 0.60);
 }
 
-/* Contenido textual de la tarjeta de juego */
-.ecolap-game-content {
-    padding: 28px 26px;
-}
-
+.ecolap-game-content { padding: 28px 26px; }
 .ecolap-game-content h3 {
     color: var(--ecolap-blanco);
     font-size: 1.4rem;
     margin-bottom: 10px;
 }
-
 .ecolap-game-content p {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.90);
     font-size: 0.95rem;
     margin-bottom: 22px;
 }
+.ecolap-game-content ul {
+    margin-bottom: 24px;
+    color: rgba(214, 255, 232, 0.92);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.ecolap-game-content ul li {
+    padding-left: 24px;
+    position: relative;
+}
+.ecolap-game-content ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--ecolap-neon);
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.55);
+}
 
-/* Botón neón para "Jugar en línea" */
 .ecolap-game-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--ecolap-neon);
+    background: var(--ecolap-neon);
     color: var(--ecolap-oscuro);
-    padding: 12px 24px;
-    border-radius: var(--radio-completo);
-    font-weight: 700;
+    padding: 13px 24px;
+    border-radius: var(--radio-pill);
+    font-weight: 800;
     font-size: 0.95rem;
     transition: var(--transicion-base);
+    box-shadow: 0 8px 22px rgba(0, 255, 135, 0.45), 0 0 18px rgba(0, 255, 135, 0.30);
 }
-
-/* Hover: fondo blanco y desplazamiento lateral */
 .ecolap-game-btn:hover {
-    background-color: var(--ecolap-blanco);
-    transform: translateX(4px);
+    background: var(--ecolap-blanco);
+    transform: translateX(4px) translateY(-2px);
     color: var(--ecolap-oscuro);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25), 0 0 22px rgba(0, 255, 135, 0.50);
 }
 
 
 /* ==========================================================
-   10. MAPA INTERACTIVO (PLACEHOLDER RADAR/GPS)
-   ----------------------------------------------------------
-   Contenedor que simula la interfaz de mapa de cobertura
-   ECOLAP con calles, áreas verdes y marcadores animados.
+   10. MAPA INTERACTIVO
    ========================================================== */
 .ecolap-map {
-    background-color: var(--ecolap-blanco);
+    background-color: transparent;
 }
 
-/* Contenedor general con padding y bordes redondeados */
 .ecolap-map-wrapper {
-    background: var(--ecolap-gradiente-suave);
-    border-radius: 30px;
+    background: var(--vidrio-bg);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border-radius: var(--radio-lg);
     padding: 50px 40px;
-    box-shadow: 0 15px 50px var(--ecolap-sombra-suave);
-    border: 1px solid var(--ecolap-overlay-medio);
+    border: 1px solid var(--vidrio-borde-claro);
+    box-shadow:
+        0 22px 60px rgba(0, 0, 0, 0.30),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
 }
 
-/* Cabecera del mapa con título y badge EN VIVO */
+body.ecolap-light .ecolap-map-wrapper {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 168, 107, 0.20);
+    box-shadow: 0 18px 50px rgba(11, 29, 22, 0.10);
+}
+
 .ecolap-map-header {
     display: flex;
     justify-content: space-between;
@@ -823,139 +977,213 @@ button {
     flex-wrap: wrap;
     gap: 16px;
 }
-
 .ecolap-map-header h3 {
-    font-size: 1.6rem;
-    color: var(--ecolap-oscuro);
+    font-size: 1.5rem;
+    color: var(--ecolap-blanco);
 }
+body.ecolap-light .ecolap-map-header h3 { color: var(--ecolap-oscuro); }
 
-/* Badge "EN VIVO" con punto rojo pulsante */
 .ecolap-live-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--ecolap-blanco);
-    color: var(--ecolap-esmeralda);
-    padding: 8px 18px;
-    border-radius: var(--radio-completo);
-    font-weight: 700;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 12px var(--ecolap-sombra-suave);
+    background: var(--vidrio-bg);
+    border: 1px solid var(--vidrio-borde);
+    color: var(--ecolap-neon);
+    padding: 9px 18px;
+    border-radius: var(--radio-pill);
+    font-weight: 800;
+    font-size: 0.82rem;
+    letter-spacing: 0.8px;
+    box-shadow: 0 0 22px rgba(0, 255, 135, 0.30);
+    backdrop-filter: blur(8px);
 }
 
-/* Punto rojo que pulsa indicando transmisión en vivo */
 .ecolap-live-dot {
-    width: 10px;
-    height: 10px;
-    background-color: #ff4757;
+    width: 10px; height: 10px;
+    background: #ff4757;
     border-radius: 50%;
     animation: ecolap-pulse-rojo 1.5s infinite;
+    box-shadow: 0 0 12px #ff4757;
 }
 
-/* --- Canvas del mapa (área donde se dibujan calles y marcadores) --- */
+/* Panel filtros */
+.ecolap-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    background: var(--vidrio-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 24px;
+    border-radius: var(--radio-md);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    margin-bottom: 28px;
+    border: 1px solid var(--vidrio-borde-claro);
+}
+body.ecolap-light .ecolap-filters {
+    background: rgba(255, 255, 255, 0.80);
+    border-color: rgba(0, 168, 107, 0.18);
+}
+
+.ecolap-filter-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ecolap-neon);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+body.ecolap-light .ecolap-filter-group label { color: var(--ecolap-esmeralda); }
+
+.ecolap-filter-group select {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid var(--vidrio-borde);
+    border-radius: var(--radio-sm);
+    background: rgba(0, 0, 0, 0.30);
+    color: var(--ecolap-blanco);
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transicion-base);
+    backdrop-filter: blur(8px);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300FF87' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 42px;
+}
+body.ecolap-light .ecolap-filter-group select {
+    background-color: rgba(244, 249, 245, 0.95);
+    color: var(--ecolap-oscuro);
+    border-color: rgba(0, 168, 107, 0.25);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300A86B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.ecolap-filter-group select:hover {
+    border-color: var(--ecolap-neon);
+    box-shadow: 0 0 16px rgba(0, 255, 135, 0.25);
+}
+.ecolap-filter-group select:focus {
+    outline: none;
+    border-color: var(--ecolap-neon);
+    box-shadow: 0 0 0 3px rgba(0, 255, 135, 0.18);
+}
+
+/* Canvas del mapa */
 .ecolap-map-canvas {
     position: relative;
-    height: 480px;
-    background: linear-gradient(135deg, #d4ebd9 0%, #b8e0c2 50%, #9fd4ad 100%);
-    border-radius: 20px;
+    height: 500px;
+    background:
+        radial-gradient(ellipse at top right, rgba(0, 255, 135, 0.30), transparent 60%),
+        linear-gradient(135deg, #0a2e23 0%, #103a2a 50%, #0a2419 100%);
+    border-radius: var(--radio-md);
     overflow: hidden;
-    box-shadow: inset 0 4px 20px var(--ecolap-sombra-media);
-    border: 2px solid var(--ecolap-overlay-medio);
+    box-shadow:
+        inset 0 4px 24px rgba(0, 0, 0, 0.45),
+        0 0 0 2px var(--vidrio-borde);
+}
+body.ecolap-light .ecolap-map-canvas {
+    background: radial-gradient(ellipse at top right, rgba(46, 204, 113, 0.30), transparent 60%),
+                linear-gradient(135deg, #d4ebd9 0%, #b8e0c2 50%, #9fd4ad 100%);
+    box-shadow: inset 0 4px 20px rgba(11, 29, 22, 0.15), 0 0 0 2px rgba(0, 168, 107, 0.20);
 }
 
-/* --- Carreteras y caminos del mapa (efecto estático) --- */
+/* Cuadrícula futurista */
+.ecolap-map-canvas::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 255, 135, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 135, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 1;
+}
+body.ecolap-light .ecolap-map-canvas::before {
+    background-image:
+        linear-gradient(rgba(11, 29, 22, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 29, 22, 0.05) 1px, transparent 1px);
+}
+
+/* Carreteras */
 .ecolap-road {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 0 12px rgba(0, 255, 135, 0.18);
+    z-index: 2;
 }
-
-/* Bordes perimetrales */
+body.ecolap-light .ecolap-road { background: rgba(255, 255, 255, 0.85); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
 .ecolap-road-1 { top: 0; left: 0; width: 100%; height: 14px; }
 .ecolap-road-2 { bottom: 0; left: 0; width: 100%; height: 14px; }
 .ecolap-road-3 { top: 0; left: 0; width: 14px; height: 100%; }
 .ecolap-road-4 { top: 0; right: 0; width: 14px; height: 100%; }
-
-/* Calles centrales cruzadas */
 .ecolap-road-5 { top: 50%; left: 0; width: 100%; height: 10px; transform: translateY(-50%); }
 .ecolap-road-6 { top: 0; left: 50%; width: 10px; height: 100%; transform: translateX(-50%); }
-
-/* Calles diagonales para realismo */
 .ecolap-road-7 { top: 25%; left: 10%; width: 80%; height: 8px; transform: rotate(8deg); }
 .ecolap-road-8 { top: 70%; left: 15%; width: 70%; height: 8px; transform: rotate(-6deg); }
 
-/* --- Áreas verdes (parques) --- */
+/* Parques */
 .ecolap-park {
     position: absolute;
-    background-color: rgba(46, 204, 113, 0.35);
+    background: radial-gradient(circle, rgba(46, 204, 113, 0.35) 0%, rgba(0, 168, 107, 0.10) 100%);
     border-radius: 50%;
-    border: 2px solid rgba(0, 168, 107, 0.3);
+    border: 2px dashed rgba(0, 255, 135, 0.40);
+    z-index: 2;
+    animation: ecolap-pulse 4s ease-in-out infinite;
 }
-
 .ecolap-park-1 { top: 10%; left: 10%; width: 100px; height: 100px; }
-.ecolap-park-2 { top: 60%; right: 10%; width: 130px; height: 130px; }
-.ecolap-park-3 { bottom: 15%; left: 25%; width: 80px; height: 80px; }
+.ecolap-park-2 { top: 60%; right: 10%; width: 130px; height: 130px; animation-delay: 1s; }
+.ecolap-park-3 { bottom: 15%; left: 25%; width: 80px; height: 80px; animation-delay: 2s; }
 
-/* --- Marcadores (camiones, recolectores, puntos de reciclaje) --- */
+/* Marcadores */
 .ecolap-marker {
     position: absolute;
     z-index: 5;
     cursor: pointer;
-    transition: var(--transicion-base);
+    transition: transform 0.3s var(--ease-suave);
 }
+.ecolap-marker:hover { transform: scale(1.18); }
 
-.ecolap-marker:hover {
-    transform: scale(1.15);
-}
-
-/* Marcador tipo camión (verde esmeralda) */
-.ecolap-marker-truck {
-    width: 50px;
-    height: 50px;
-    background-color: var(--ecolap-esmeralda);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    color: var(--ecolap-blanco);
-    box-shadow: 0 4px 14px var(--ecolap-sombra-verde);
-    border: 3px solid var(--ecolap-blanco);
-    animation: ecolap-float 3s ease-in-out infinite;
-}
-
-/* Marcador tipo recolector (verde hoja) */
-.ecolap-marker-collector {
-    width: 42px;
-    height: 42px;
-    background-color: var(--ecolap-hoja);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    color: var(--ecolap-blanco);
-    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.5);
-    border: 3px solid var(--ecolap-blanco);
-    animation: ecolap-float 3s ease-in-out infinite;
-}
-
-/* Marcador tipo punto de reciclaje (verde oscuro) */
+.ecolap-marker-truck,
+.ecolap-marker-collector,
 .ecolap-marker-recycle {
-    width: 46px;
-    height: 46px;
-    background-color: var(--ecolap-oscuro);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--ecolap-blanco);
+    border: 3px solid rgba(255, 255, 255, 0.95);
+    animation: ecolap-float 3s ease-in-out infinite;
+}
+
+.ecolap-marker-truck {
+    width: 52px; height: 52px;
+    background: var(--ecolap-gradiente-principal);
+    border-radius: 50%;
+    font-size: 1.4rem;
+    box-shadow: 0 8px 22px var(--ecolap-sombra-verde), 0 0 22px rgba(0, 255, 135, 0.45);
+}
+
+.ecolap-marker-collector {
+    width: 44px; height: 44px;
+    background: var(--ecolap-gradiente-hoja);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 16px rgba(46, 204, 113, 0.55), 0 0 18px rgba(46, 204, 113, 0.40);
+}
+
+.ecolap-marker-recycle {
+    width: 46px; height: 46px;
+    background: var(--ecolap-gradiente-oscuro);
+    border-radius: 50%;
     font-size: 1.2rem;
     color: var(--ecolap-neon);
-    box-shadow: 0 4px 12px rgba(27, 77, 62, 0.4);
-    border: 3px solid var(--ecolap-blanco);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.50), 0 0 22px rgba(0, 255, 135, 0.55);
+    border-color: var(--ecolap-neon);
 }
 
-/* Posicionamiento individual de cada marcador */
 .ecolap-marker-1 { top: 20%; left: 25%; animation-delay: 0s; }
 .ecolap-marker-2 { top: 35%; left: 65%; animation-delay: 0.5s; }
 .ecolap-marker-3 { top: 55%; left: 40%; animation-delay: 1s; }
@@ -965,26 +1193,92 @@ button {
 .ecolap-marker-7 { top: 45%; left: 15%; animation-delay: 0.3s; }
 .ecolap-marker-8 { top: 15%; left: 50%; animation-delay: 1.8s; }
 
-/* Efecto de onda expansiva en cada marcador */
+/* Onda expansiva */
 .ecolap-marker::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     border-radius: 50%;
-    background-color: var(--ecolap-esmeralda);
-    opacity: 0.4;
-    animation: ecolap-ripple 2s infinite;
+    background: var(--ecolap-neon);
+    opacity: 0.35;
+    animation: ecolap-ripple 2.4s infinite;
     z-index: -1;
+    box-shadow: 0 0 18px rgba(0, 255, 135, 0.45);
 }
 
-/* --- Leyenda del mapa --- */
+/* Tarjeta flotante camión — siempre oscura para legibilidad total
+   (texto blanco + acentos neón sobre verde profundo) */
+.ecolap-floating-card {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    background: linear-gradient(160deg, rgba(5, 20, 16, 0.96) 0%, rgba(11, 29, 22, 0.94) 100%);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    padding: 18px 22px;
+    border-radius: var(--radio-md);
+    border: 1px solid var(--vidrio-borde-fuerte);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.50), 0 0 26px rgba(0, 255, 135, 0.25);
+    z-index: 10;
+    max-width: 280px;
+    color: var(--ecolap-blanco);
+    animation: ecolap-fade-in-up 1s ease 0.6s backwards;
+}
+.ecolap-floating-card h4 {
+    color: var(--ecolap-blanco);
+    margin-bottom: 6px;
+    font-size: 0.98rem;
+}
+.ecolap-floating-card p {
+    color: rgba(214, 245, 228, 0.92);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.ecolap-eta-time {
+    display: inline-block;
+    background: var(--ecolap-gradiente-neon);
+    color: var(--ecolap-oscuro);
+    padding: 6px 14px;
+    border-radius: var(--radio-pill);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    box-shadow: 0 0 18px rgba(0, 255, 135, 0.45);
+}
+
+/* Nota ministerial — siempre oscura con texto legible (blanco + neón) */
+.ecolap-ministry-note {
+    background: linear-gradient(160deg, #051410 0%, #0B1D16 60%, #0F3A2A 100%);
+    color: var(--ecolap-blanco);
+    padding: 32px;
+    border-radius: var(--radio-md);
+    margin-top: 40px;
+    border-left: 4px solid var(--ecolap-neon);
+    border-top: 1px solid rgba(0, 255, 135, 0.30);
+    border-right: 1px solid rgba(0, 255, 135, 0.18);
+    border-bottom: 1px solid rgba(0, 255, 135, 0.18);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35), 0 0 30px rgba(0, 255, 135, 0.12);
+}
+.ecolap-ministry-note h3 {
+    color: var(--ecolap-blanco);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ecolap-ministry-note p {
+    color: rgba(226, 245, 234, 0.92);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+.ecolap-ministry-note strong { color: var(--ecolap-neon); }
+
+/* Leyenda del mapa */
 .ecolap-map-legend {
     display: flex;
-    gap: 24px;
+    gap: 14px;
     margin-top: 24px;
     flex-wrap: wrap;
     justify-content: center;
@@ -994,48 +1288,54 @@ button {
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: var(--ecolap-blanco);
-    padding: 8px 16px;
-    border-radius: var(--radio-completo);
+    background: var(--vidrio-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--vidrio-borde-claro);
+    padding: 9px 18px;
+    border-radius: var(--radio-pill);
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: var(--ecolap-blanco);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+body.ecolap-light .ecolap-legend-item {
+    background: rgba(255, 255, 255, 0.85);
     color: var(--ecolap-oscuro);
-    box-shadow: 0 4px 10px var(--ecolap-sombra-suave);
+    border-color: rgba(0, 168, 107, 0.20);
 }
 
-/* Punto de color de cada elemento de la leyenda */
 .ecolap-legend-dot {
-    width: 16px;
-    height: 16px;
+    width: 14px; height: 14px;
     border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
 }
-.ecolap-legend-dot.truck { background-color: var(--ecolap-esmeralda); }
-.ecolap-legend-dot.collector { background-color: var(--ecolap-hoja); }
-.ecolap-legend-dot.point { background-color: var(--ecolap-oscuro); }
+.ecolap-legend-dot.truck { background: var(--ecolap-esmeralda); color: var(--ecolap-esmeralda); }
+.ecolap-legend-dot.collector { background: var(--ecolap-hoja); color: var(--ecolap-hoja); }
+.ecolap-legend-dot.point { background: var(--ecolap-neon); color: var(--ecolap-neon); }
 
-/* Aviso de versión beta */
 .ecolap-beta-notice {
     text-align: center;
-    margin-top: 20px;
-    color: var(--ecolap-gris-texto);
-    font-size: 0.9rem;
+    margin-top: 22px;
+    color: var(--ecolap-texto-medio);
+    font-size: 0.88rem;
     font-style: italic;
 }
+body.ecolap-light .ecolap-beta-notice { color: rgba(27, 77, 62, 0.65); }
 
 
 /* ==========================================================
-   11. PIE DE PÁGINA (FOOTER)
-   ----------------------------------------------------------
-   Footer oscuro con marca, descripción, redes sociales,
-   columnas de enlaces y créditos de desarrollo.
+   11. FOOTER
    ========================================================== */
 .ecolap-footer {
-    background-color: var(--ecolap-oscuro);
+    background: linear-gradient(180deg, transparent 0%, rgba(5, 20, 16, 0.95) 100%);
+    border-top: 1px solid var(--vidrio-borde);
     color: var(--ecolap-blanco);
-    padding: 60px 0 24px;
+    padding: 70px 0 28px;
+    margin-top: 60px;
+    backdrop-filter: blur(20px);
 }
 
-/* Grid principal del footer */
 .ecolap-footer-content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -1043,45 +1343,41 @@ button {
     margin-bottom: 40px;
 }
 
-/* --- Columna de marca y descripción --- */
 .ecolap-footer-brand .ecolap-logo {
     color: var(--ecolap-blanco);
     margin-bottom: 16px;
 }
-
 .ecolap-footer-brand p {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.70);
     font-size: 0.95rem;
     max-width: 320px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
-/* Iconos de redes sociales */
 .ecolap-footer-social {
     display: flex;
     gap: 12px;
 }
-
 .ecolap-social-link {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    width: 42px; height: 42px;
+    background: var(--vidrio-bg);
+    border: 1px solid var(--vidrio-borde);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--ecolap-blanco);
     font-size: 1.1rem;
     transition: var(--transicion-base);
+    backdrop-filter: blur(10px);
 }
-
-/* Hover: fondo verde y elevación */
 .ecolap-social-link:hover {
-    background-color: var(--ecolap-esmeralda);
-    transform: translateY(-3px);
+    background: var(--ecolap-gradiente-principal);
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: 0 10px 24px var(--ecolap-sombra-verde), 0 0 20px rgba(0, 255, 135, 0.40);
 }
 
-/* --- Columnas de enlaces del footer --- */
 .ecolap-footer-col h4 {
     color: var(--ecolap-blanco);
     font-size: 1.05rem;
@@ -1089,279 +1385,382 @@ button {
     position: relative;
     padding-bottom: 10px;
 }
-
-/* Subrayado decorativo en los títulos del footer */
 .ecolap-footer-col h4::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background-color: var(--ecolap-neon);
+    bottom: 0; left: 0;
+    width: 36px; height: 2px;
+    background: var(--ecolap-gradiente-neon);
+    box-shadow: 0 0 10px var(--ecolap-neon);
 }
 
-.ecolap-footer-col ul li {
-    margin-bottom: 10px;
-}
-
+.ecolap-footer-col ul li { margin-bottom: 10px; }
 .ecolap-footer-col ul li a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.70);
     font-size: 0.92rem;
     transition: var(--transicion-base);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
-
-/* Hover: color neón y desplazamiento a la derecha */
+.ecolap-footer-col ul li a::before {
+    content: '›';
+    color: var(--ecolap-neon);
+    transition: transform 0.3s ease;
+    opacity: 0;
+}
 .ecolap-footer-col ul li a:hover {
     color: var(--ecolap-neon);
-    padding-left: 6px;
+    padding-left: 8px;
+}
+.ecolap-footer-col ul li a:hover::before {
+    opacity: 1;
+    transform: translateX(2px);
 }
 
-/* --- Barra inferior con créditos y copyright --- */
 .ecolap-footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 24px;
+    border-top: 1px solid var(--vidrio-borde-claro);
+    padding-top: 26px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
 }
-
 .ecolap-footer-bottom p {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.55);
     font-size: 0.88rem;
 }
-
 .ecolap-footer-bottom p span {
     color: var(--ecolap-neon);
-    font-weight: 600;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.45);
 }
 
 
 /* ==========================================================
-   12. ANIMACIONES
-   ----------------------------------------------------------
-   Keyframes reutilizables para efectos visuales (pulsos,
-   elevaciones, ondas y entradas).
+   12. ANIMACIONES / KEYFRAMES
    ========================================================== */
-
-/* Entrada desde abajo con opacidad (usado en hero y stats) */
 @keyframes ecolap-fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Pulso genérico (badge superior) */
 @keyframes ecolap-pulse {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.6;
-        transform: scale(1.2);
-    }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.55; transform: scale(1.3); }
 }
 
-/* Pulso rojo del badge EN VIVO */
 @keyframes ecolap-pulse-rojo {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(255, 71, 87, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
-    }
+    0%   { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
+    70%  { box-shadow: 0 0 0 14px rgba(255, 71, 87, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
 }
 
-/* Flotación suave vertical (marcadores del mapa) */
 @keyframes ecolap-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+@keyframes ecolap-ripple {
+    0%   { width: 100%; height: 100%; opacity: 0.5; }
+    100% { width: 240%; height: 240%; opacity: 0; }
+}
+
+@keyframes ecolap-logo-pulse {
     0%, 100% {
-        transform: translateY(0);
+        box-shadow:
+            0 8px 22px var(--ecolap-sombra-verde),
+            0 0 18px rgba(0, 255, 135, 0.30),
+            0 0 0 1px rgba(255, 255, 255, 0.08) inset;
     }
     50% {
-        transform: translateY(-8px);
+        box-shadow:
+            0 8px 22px var(--ecolap-sombra-verde),
+            0 0 32px rgba(0, 255, 135, 0.55),
+            0 0 0 1px rgba(255, 255, 255, 0.12) inset;
     }
 }
 
-/* Onda expansiva alrededor de los marcadores */
-@keyframes ecolap-ripple {
-    0% {
-        width: 100%;
-        height: 100%;
-        opacity: 0.5;
-    }
-    100% {
-        width: 200%;
-        height: 200%;
-        opacity: 0;
-    }
+@keyframes ecolap-blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%      { transform: translate(40px, -50px) scale(1.12); }
+    66%      { transform: translate(-30px, 40px) scale(0.92); }
+}
+
+@keyframes ecolap-spin { to { transform: rotate(360deg); } }
+
+@keyframes ecolap-shine {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }
 
 
 /* ==========================================================
-   13. DISEÑO RESPONSIVE
-   ----------------------------------------------------------
-   Breakpoints para adaptar el layout a tablets y móviles
-   usando CSS Grid y Flexbox.
+   13. BANNER PROMOCIONAL APP MÓVIL
    ========================================================== */
-
-/* --- Tablet (max 992px): hero en una columna --- */
-@media (max-width: 992px) {
-    .ecolap-hero-content {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .ecolap-hero {
-        padding: 70px 0 90px;
-    }
-
-    .ecolap-section {
-        padding: 70px 0;
-    }
-
-    .ecolap-footer-content {
-        grid-template-columns: 1fr 1fr;
-    }
+.ecolap-app-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    z-index: 9999;
+    background: linear-gradient(135deg, #0b1d16 0%, #1B4D3E 50%, #00A86B 100%);
+    color: var(--ecolap-blanco);
+    padding: 18px 60px 18px 24px;
+    border-radius: 20px;
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(0, 255, 135, 0.45),
+        0 0 60px rgba(0, 168, 107, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+    border: 2px solid var(--ecolap-neon);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 620px;
+    width: calc(100% - 40px);
+    /* Visible por defecto: sin opacity/display ocultos en el estado base.
+       La animación solo retrasa la ENTRADA (0.6s) y termina siempre visible,
+       de modo que no depende de JavaScript para mostrarse. */
+    animation: ecolap-banner-slide-up 0.8s var(--ease-bounce) 0.6s backwards;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    overflow: hidden;
 }
 
-/* --- Móvil (max 768px): menú hamburguesa y ajustes --- */
-@media (max-width: 768px) {
+.ecolap-app-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ecolap-neon), transparent);
+    opacity: 0.6;
+}
 
-    /* Menú móvil: desplegable vertical con animación */
+.ecolap-app-banner-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+    animation: ecolap-banner-bounce 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(0, 255, 135, 0.5));
+}
+
+.ecolap-app-banner-text { flex: 1; min-width: 0; }
+.ecolap-app-banner-text h4 {
+    color: var(--ecolap-blanco);
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    margin: 0 0 4px 0;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+}
+.ecolap-app-banner-text p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.82rem;
+    margin: 0;
+    line-height: 1.3;
+}
+.ecolap-app-banner-text p strong {
+    color: var(--ecolap-neon);
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.55);
+    font-weight: 800;
+}
+
+.ecolap-app-banner-btn {
+    background: var(--ecolap-neon);
+    color: var(--ecolap-oscuro);
+    padding: 12px 22px;
+    border: none;
+    border-radius: var(--radio-pill);
+    font-family: var(--fuente-titulos);
+    font-weight: 800;
+    font-size: 0.88rem;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: 0 8px 22px rgba(0, 255, 135, 0.55), 0 0 20px rgba(0, 255, 135, 0.40);
+    transition: all 0.3s var(--ease-bounce);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+.ecolap-app-banner-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transition: left 0.5s ease;
+}
+.ecolap-app-banner-btn:hover::before { left: 100%; }
+.ecolap-app-banner-btn:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 12px 28px rgba(0, 255, 135, 0.75), 0 0 24px rgba(0, 255, 135, 0.55);
+    color: var(--ecolap-oscuro);
+}
+.ecolap-app-banner-btn:active { transform: translateY(0) scale(0.98); transition: transform 0.1s ease; }
+.ecolap-app-banner-btn:focus-visible { outline: 3px solid var(--ecolap-neon); outline-offset: 3px; }
+
+.ecolap-app-banner-close {
+    position: absolute;
+    top: 8px; right: 10px;
+    width: 28px; height: 28px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--ecolap-blanco);
+    font-size: 1.1rem;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    transition: all 0.3s var(--ease-bounce);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.ecolap-app-banner-close:hover {
+    background: #ff4757;
+    border-color: #ff4757;
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 0 14px rgba(255, 71, 87, 0.6);
+}
+.ecolap-app-banner-close:focus-visible { outline: 3px solid var(--ecolap-neon); outline-offset: 2px; }
+
+.ecolap-app-banner.hidden {
+    /* Solo se aplica al hacer clic en la X (sesión actual).
+       Al recargar, el banner vuelve a su estado base: visible. */
+    animation: ecolap-banner-fade-out 0.4s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes ecolap-banner-slide-up {
+    from { opacity: 0; transform: translateX(-50%) translateY(120%); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes ecolap-banner-fade-out {
+    from { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+    to   { opacity: 0; transform: translateX(-50%) translateY(80px) scale(0.9); }
+}
+@keyframes ecolap-banner-bounce {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50%      { transform: translateY(-8px) rotate(5deg); }
+}
+
+@media (max-width: 600px) {
+    .ecolap-app-banner {
+        bottom: 12px;
+        padding: 14px 50px 14px 16px;
+        gap: 12px;
+        border-radius: 14px;
+    }
+    .ecolap-app-banner-icon { font-size: 1.7rem; }
+    .ecolap-app-banner-text h4 { font-size: 0.9rem; }
+    .ecolap-app-banner-text p { font-size: 0.75rem; }
+    .ecolap-app-banner-btn { padding: 10px 16px; font-size: 0.8rem; }
+}
+@media (max-width: 380px) {
+    .ecolap-app-banner-btn .btn-text { display: none; }
+}
+
+
+/* ==========================================================
+   14. RESPONSIVE
+   ========================================================== */
+@media (max-width: 992px) {
+    .ecolap-hero-content { grid-template-columns: 1fr; gap: 50px; }
+    .ecolap-hero { padding: 80px 0 100px; }
+    .ecolap-section { padding: 80px 0; }
+    .ecolap-footer-content { grid-template-columns: 1fr 1fr; }
+    .ecolap-map-canvas { height: 420px; }
+}
+
+@media (max-width: 768px) {
     .ecolap-menu {
         position: fixed;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background-color: var(--ecolap-blanco);
+        top: 76px;
+        left: 16px;
+        right: 16px;
+        background: rgba(11, 29, 22, 0.92);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid var(--vidrio-borde);
         flex-direction: column;
         padding: 24px;
-        gap: 20px;
-        box-shadow: 0 10px 30px var(--ecolap-sombra-suave);
+        gap: 18px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.50), 0 0 26px rgba(0, 255, 135, 0.18);
+        border-radius: var(--radio-md);
         transform: translateY(-150%);
         opacity: 0;
         transition: var(--transicion-base);
-        pointer-events: none;       /* Deshabilitado cuando está cerrado */
+        pointer-events: none;
+    }
+    .ecolap-menu.active { transform: translateY(0); opacity: 1; pointer-events: all; }
+    .ecolap-menu a { width: 100%; padding: 10px 6px; }
+    .ecolap-menu .ecolap-cta-nav { text-align: center; justify-content: center; }
+
+    .ecolap-burger { display: flex; }
+
+    .ecolap-hero-stats { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .ecolap-stat-card { padding: 22px 18px; }
+    .ecolap-stat-number { font-size: 1.55rem; }
+
+    .ecolap-map-wrapper { padding: 28px 18px; }
+    .ecolap-map-canvas { height: 380px; }
+    .ecolap-map-header h3 { font-size: 1.2rem; }
+    .ecolap-floating-card {
+        position: relative;
+        bottom: auto; left: auto;
+        margin: 18px auto 0;
+        max-width: 100%;
     }
 
-    /* Cuando se activa (clase .active), se muestra */
-    .ecolap-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    /* Muestra el botón hamburguesa */
-    .ecolap-burger {
-        display: flex;
-    }
-
-    /* Tarjetas de stats más compactas */
-    .ecolap-hero-stats {
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-    }
-
-    .ecolap-stat-card {
-        padding: 22px 18px;
-    }
-
-    .ecolap-stat-number {
-        font-size: 1.5rem;
-    }
-
-    /* Mapa con menos padding y altura reducida */
-    .ecolap-map-wrapper {
-        padding: 30px 20px;
-    }
-
-    .ecolap-map-canvas {
-        height: 360px;
-    }
-
-    .ecolap-map-header h3 {
-        font-size: 1.25rem;
-    }
-
-    /* Footer en una sola columna */
-    .ecolap-footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .ecolap-footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
+    .ecolap-footer-content { grid-template-columns: 1fr; gap: 30px; }
+    .ecolap-footer-bottom { flex-direction: column; text-align: center; }
 }
 
-/* --- Móvil pequeño (max 480px): ajustes finos --- */
 @media (max-width: 480px) {
-    .container {
-        padding: 0 18px;
-    }
-
-    .ecolap-hero {
-        padding: 50px 0 70px;
-    }
-
-    .ecolap-section {
-        padding: 60px 0;
-    }
-
-    /* Botones apilados a ancho completo */
-    .ecolap-hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .ecolap-btn-primary,
-    .ecolap-btn-secondary {
+    .container { padding: 0 18px; }
+    .ecolap-hero { padding: 60px 0 80px; }
+    .ecolap-section { padding: 70px 0; }
+    .ecolap-hero-buttons { flex-direction: column; width: 100%; }
+    .ecolap-btn-primary, .ecolap-btn-secondary {
         width: 100%;
         justify-content: center;
     }
+    .ecolap-card { padding: 30px 22px; }
+    .ecolap-game-content { padding: 22px 20px; }
+    .ecolap-map-canvas { height: 320px; }
+    .ecolap-marker-truck { width: 40px; height: 40px; font-size: 1.1rem; }
+    .ecolap-marker-collector { width: 34px; height: 34px; font-size: 0.9rem; }
+    .ecolap-marker-recycle { width: 38px; height: 38px; font-size: 1rem; }
+    .ecolap-cta-nav { padding: 10px 18px; font-size: 0.9rem; }
+}
 
-    /* Cards con padding reducido */
-    .ecolap-card {
-        padding: 28px 22px;
-    }
 
-    .ecolap-game-content {
-        padding: 22px 20px;
-    }
+/* ==========================================================
+   15. UTILIDADES / ESTADOS GLOBALES
+   ========================================================== */
+.ecolap-glow-text {
+    background: var(--ecolap-gradiente-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-    /* Mapa aún más compacto */
-    .ecolap-map-canvas {
-        height: 300px;
-    }
+.ecolap-mt-0 { margin-top: 0 !important; }
+.ecolap-text-center { text-align: center; }
 
-    /* Marcadores más pequeños para no saturar */
-    .ecolap-marker-truck {
-        width: 38px;
-        height: 38px;
-        font-size: 1.1rem;
-    }
-
-    .ecolap-marker-collector {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-    }
-
-    .ecolap-marker-recycle {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-    }
+.ecolap-hidden { display: none !important; }
+.ecolap-sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }

@@ -22,43 +22,38 @@
     <title>Aprende y Recicla | ECOLAP - Plataforma de Investigación</title>
     <!-- Título de la pestaña del navegador -->
 
+    <!-- Icono de la pestaña del navegador (favicon) con el logo oficial ECOLAP -->
+    <link rel="icon" type="image/png" href="Img/LG_original.png">
+    <link rel="apple-touch-icon" href="Img/LG_original.png">
+
     <!-- Carga de fuentes tipográficas Montserrat y Poppins desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Enlace a la hoja de estilos externa styles.css del proyecto ECOLAP -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1787719118">
 </head>
 
 <body>
     <!-- Cuerpo del documento: contiene todo el contenido visible -->
 
     <!-- ==========================================================
-         HEADER / BARRA DE NAVEGACIÓN ECOLAP
-         Reutilizado en todas las páginas para mantener coherencia
-         ========================================================== -->
+    HEADER / BARRA DE NAVEGACIÓN ECOLAP
+    ========================================================== -->
     <header class="ecolap-header">
         <div class="container">
             <nav class="ecolap-nav">
-                <!-- Logo ECOLAP que enlaza a la página de inicio -->
                 <a href="index.html" class="ecolap-logo">
-                    <div class="ecolap-logo-icon">🌿</div>
+                    <div class="ecolap-logo-icon"><img src="Img/LG_original.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                     <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                 </a>
-
-                <!-- Menú principal de navegación entre las páginas del proyecto -->
+                <!-- Menú principal: solo Inicio + Aprende y Recicla -->
                 <ul class="ecolap-menu" id="ecolapMenu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <!-- El módulo "Aprende y Recicla" está marcado como activo en esta página -->
-                    <li><a href="aprende.html" class="active">Aprende y Recicla</a></li>
-                    <li><a href="juegos.html">Juegos Eco</a></li>
-                    <li><a href="mapa.html">Ruta Recolectores</a></li>
-                    <li><a href="login.html" class="ecolap-cta-nav">Unirme a ECOLAP</a></li>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="aprende.html">Aprende y Recicla</a></li>
                 </ul>
-
-                <!-- Botón hamburguesa para abrir el menú en dispositivos móviles -->
-                <button class="ecolap-burger" id="ecolapBurger" aria-label="Abrir menú ECOLAP">
+                <button class="ecolap-burger" id="ecolapBurger" aria-label="Menú ECOLAP">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -66,6 +61,7 @@
             </nav>
         </div>
     </header>
+
     <!-- Fin del header -->
 
     <!-- ==========================================================
@@ -342,7 +338,7 @@
                 <!-- Columna 1: marca y redes -->
                 <div class="ecolap-footer-brand">
                     <a href="index.html" class="ecolap-logo">
-                        <div class="ecolap-logo-icon">🌿</div>
+                        <div class="ecolap-logo-icon"><img src="Img/LG_original.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                         <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                     </a>
                     <p>ECOLAP es la plataforma líder en gestión e incentivo del reciclaje. Transformamos comunidades a través de la innovación verde y la tecnología sostenible.</p>
@@ -360,8 +356,6 @@
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="aprende.html">Aprende y Recicla</a></li>
-                        <li><a href="juegos.html">Juegos Eco</a></li>
-                        <li><a href="mapa.html">Ruta Recolectores</a></li>
                     </ul>
                 </div>
 

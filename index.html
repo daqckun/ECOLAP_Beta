@@ -27,8 +27,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- Icono de la pestaña del navegador (favicon) con el logo oficial ECOLAP -->
+    <link rel="icon" type="image/png" href="Img/LG_original.png">
+    <link rel="apple-touch-icon" href="Img/LG_original.png">
+
     <!-- Enlace a la hoja de estilos externa styles.css -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1787719118">
 
     <!-- Estilos específicos del banner promocional de la App Móvil ECOLAP -->
     <style>
@@ -222,21 +226,19 @@
     <!-- Inicio del cuerpo del documento -->
 
     <!-- ==========================================================
-         HEADER / BARRA DE NAVEGACIÓN ECOLAP
-         ========================================================== -->
+    HEADER / BARRA DE NAVEGACIÓN ECOLAP
+    ========================================================== -->
     <header class="ecolap-header">
         <div class="container">
             <nav class="ecolap-nav">
                 <a href="index.html" class="ecolap-logo">
-                    <div class="ecolap-logo-icon">🌿</div>
+                    <div class="ecolap-logo-icon"><img src="Img/LG_original.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                     <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                 </a>
+                <!-- Menú principal: solo Inicio + Aprende y Recicla -->
                 <ul class="ecolap-menu" id="ecolapMenu">
                     <li><a href="index.html" class="active">Inicio</a></li>
                     <li><a href="aprende.html">Aprende y Recicla</a></li>
-                    <li><a href="juegos.html">Juegos Eco</a></li>
-                    <li><a href="mapa.html">Ruta Recolectores</a></li>
-                    <li><a href="#registro" class="ecolap-cta-nav">Unirme a ECOLAP</a></li>
                 </ul>
                 <button class="ecolap-burger" id="ecolapBurger" aria-label="Menú ECOLAP">
                     <span></span>
@@ -261,8 +263,7 @@
                     <h1>Bienvenido a <span>ECOLAP</span>: Transforma tu Huella Ambiental</h1>
                     <p>La solución digital integral de ECOLAP para aprender, jugar y rastrear el reciclaje en tu ciudad.</p>
                     <div class="ecolap-hero-buttons">
-                        <a href="#registro" class="ecolap-btn-primary">Unirme a ECOLAP <span>→</span></a>
-                        <a href="aprende.html" class="ecolap-btn-secondary">Explorar ECOLAP</a>
+                        <a href="aprende.html" class="ecolap-btn-primary">Explorar ECOLAP <span>→</span></a>
                     </div>
                 </div>
                 <div class="ecolap-hero-stats">
@@ -325,23 +326,6 @@
     </section>
 
     <!-- ==========================================================
-         SECCIÓN DE REGISTRO
-         ========================================================== -->
-    <section class="ecolap-section" id="registro" style="background: var(--ecolap-gradiente-suave);">
-        <div class="container">
-            <div class="ecolap-section-header">
-                <span class="ecolap-section-tag">Únete a ECOLAP</span>
-                <h2 class="ecolap-section-title">Sé parte del cambio con ECOLAP</h2>
-                <p class="ecolap-section-subtitle">Regístrate gratis y empieza a transformar tu huella ambiental.</p>
-                <div class="ecolap-hero-buttons" style="justify-content: center; margin-top: 30px;">
-                    <a href="login.html" class="ecolap-btn-primary">Crear cuenta ECOLAP <span>→</span></a>
-                    <a href="#inicio" class="ecolap-btn-secondary">Volver arriba</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================
          FOOTER ECOLAP
          ========================================================== -->
     <footer class="ecolap-footer">
@@ -349,7 +333,7 @@
             <div class="ecolap-footer-content">
                 <div class="ecolap-footer-brand">
                     <a href="index.html" class="ecolap-logo">
-                        <div class="ecolap-logo-icon">🌿</div>
+                        <div class="ecolap-logo-icon"><img src="Img/LG_original.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                         <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                     </a>
                     <p>ECOLAP es la plataforma líder en gestión e incentivo del reciclaje.</p>
@@ -419,13 +403,14 @@
         <!-- Texto promocional del banner -->
         <div class="ecolap-app-banner-text">
             <h4>¡Lleva a ECOLAP en tu bolsillo!</h4>
-            <p>Descarga nuestra App móvil para <strong>iOS y Android</strong></p>
+            <p>Descarga nuestra App móvil para <strong> Android</strong></p>
         </div>
 
         <!-- Botón principal de descarga con efecto hover neón -->
         <a href="ECOLAP.apk" download="ECOLAP.apk" class="ecolap-app-banner-btn">
             <span class="btn-text">Descargar App</span> 🚀
         </a>
+    </div>
     <!-- Fin del banner promocional de la App ECOLAP -->
 
     <!-- ==========================================================

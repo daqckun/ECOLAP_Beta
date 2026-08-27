@@ -4,16 +4,12 @@
 -- Charset: utf8mb4 / Collation: utf8mb4_unicode_ci
 -- Adaptado a los módulos: Login, Mapa, Juegos, Aprender y Recolección
 -- =================================================================
-
--- Eliminar la base de datos si existe (para reiniciar limpio en desarrollo)
 DROP DATABASE IF EXISTS ecolap_db;
-
 -- Crear la base de datos con charset utf8mb4 para soportar emojis y caracteres especiales
 CREATE DATABASE ecolap_db
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
--- Seleccionar la base de datos recién creada para trabajar sobre ella
 USE ecolap_db;
 
 -- =================================================================
@@ -207,6 +203,31 @@ CREATE TABLE juegos (
     CONSTRAINT fk_juegos_usuario
         FOREIGN KEY (id_usuario) REFERENCES usuarios (id_usuario)
         ON DELETE CASCADE
+        ON UPDATE CASCADE
+	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- =================================================================
+-- 10. TABLA: ubicacion_recolectores
+-- -----------------------------------------------------------------
+-- Almacena las coordenadas GPS enviadas periódicamente desde el 
+-- celular del recolector (Google Maps API / Geolocation API).
+-- Soporta el rastreo en tiempo real para solicitudes y rutas públicas.
+-- =================================================================
+CREATE TABLE ubicacion_recolectores (
+    id_ubicacion    INT             NOT NULL AUTO_INCREMENT,
+    id_recolector   INT             NOT NULL,                -- Recolector transmitiendo GPS
+    id_solicitud    INT             NULL,                    -- Opcional: Vinculado a recolección 'En Camino'
+    latitud         DECIMAL(10, 8)  NOT NULL,                -- Coordenada de latitud del dispositivo
+    longitud        DECIMAL(11, 8)  NOT NULL,                -- Coordenada de longitud del dispositivo
+    fecha_hora      DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_ubicacion),
+    CONSTRAINT fk_ubicacion_recolector
+        FOREIGN KEY (id_recolector) REFERENCES usuarios (id_usuario)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    CONSTRAINT fk_ubicacion_solicitud
+        FOREIGN KEY (id_solicitud) REFERENCES solicitudes_recoleccion (id_solicitud)
+        ON DELETE SET NULL
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

@@ -27,12 +27,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Enlace a la hoja de estilos externa styles.css -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Enlace a la hoja de estilos externa styles.css (eco-tech glassmorphism) -->
+    <!-- Icono de la pestaña del navegador (favicon) con el logo oficial ECOLAP -->
+    <link rel="icon" type="image/png" href="../Img/ecolap.png">
+    <link rel="apple-touch-icon" href="../Img/ecolap.png">
 
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="ecolap-light">
     <!-- Inicio del cuerpo del documento -->
 
     <!-- ==========================================================
@@ -42,7 +45,7 @@
         <div class="container">
             <nav class="ecolap-nav">
                 <a href="index.html" class="ecolap-logo">
-                    <div class="ecolap-logo-icon">🌿</div>
+                    <div class="ecolap-logo-icon"><img src="../Img/ecolap.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                     <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                 </a>
                 <ul class="ecolap-menu" id="ecolapMenu">
@@ -163,7 +166,7 @@
             <div class="ecolap-footer-content">
                 <div class="ecolap-footer-brand">
                     <a href="index.html" class="ecolap-logo">
-                        <div class="ecolap-logo-icon">🌿</div>
+                        <div class="ecolap-logo-icon"><img src="../Img/ecolap.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                         <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                     </a>
                     <p>ECOLAP es la plataforma líder en gestión e incentivo del reciclaje.</p>
@@ -209,42 +212,18 @@
         </div>
     </footer>
 
-    <script>
-        // ====== Menú móvil hamburguesa ======
-        const burger = document.getElementById('ecolapBurger');
-        const menu = document.getElementById('ecolapMenu');
+    <!-- ==========================================================
+         NOTA (versión App Móvil): El banner promocional de
+         descarga ("¡Lleva a ECOLAP en tu bolsillo!") se omite
+         aquí a propósito: el usuario ya está dentro de la app
+         instalada. Dicho banner solo existe en la versión Web.
+         ========================================================== -->
 
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('active');
-            menu.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.ecolap-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                burger.classList.remove('active');
-                menu.classList.remove('active');
-            });
-        });
-
-        // ====== Lógica del Banner Promocional ECOLAP ======
-        // Obtenemos las referencias a los elementos del DOM del banner
-        const banner = document.getElementById('ecolapAppBanner');
-        const closeBtn = document.getElementById('ecolapBannerClose');
-
-        // Evento click en el botón de cierre (X)
-        closeBtn.addEventListener('click', () => {
-            // 1. Añadimos la clase "hidden" al banner
-            //    Esta clase activa la animación CSS "ecolap-banner-fade-out"
-            //    que hace que el banner se desvanezca y baje suavemente
-            banner.classList.add('hidden');
-
-            // 2. Esperamos 400ms (la duración de la animación CSS)
-            //    y luego ocultamos completamente el banner con display:none
-            setTimeout(() => {
-                banner.style.display = 'none';
-            }, 400);
-        });
-    </script>
+    <!-- ==========================================================
+         SCRIPT JAVASCRIPT compartido (app.js)
+         Controla: menú móvil, animaciones, header, etc.
+         ========================================================== -->
+    <script src="app.js"></script>
 </body>
 
 </html>

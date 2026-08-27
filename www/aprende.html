@@ -28,10 +28,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Enlace a la hoja de estilos externa styles.css del proyecto ECOLAP -->
+    <!-- Icono de la pestaña del navegador (favicon) con el logo oficial ECOLAP -->
+    <link rel="icon" type="image/png" href="../Img/ecolap.png">
+    <link rel="apple-touch-icon" href="../Img/ecolap.png">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="ecolap-light">
     <!-- Cuerpo del documento: contiene todo el contenido visible -->
 
     <!-- ==========================================================
@@ -43,7 +47,7 @@
             <nav class="ecolap-nav">
                 <!-- Logo ECOLAP que enlaza a la página de inicio -->
                 <a href="index.html" class="ecolap-logo">
-                    <div class="ecolap-logo-icon">🌿</div>
+                    <div class="ecolap-logo-icon"><img src="../Img/ecolap.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                     <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                 </a>
 
@@ -342,7 +346,7 @@
                 <!-- Columna 1: marca y redes -->
                 <div class="ecolap-footer-brand">
                     <a href="index.html" class="ecolap-logo">
-                        <div class="ecolap-logo-icon">🌿</div>
+                        <div class="ecolap-logo-icon"><img src="../Img/ecolap.png" alt="Logo ECOLAP" class="ecolap-logo-img"></div>
                         <div class="ecolap-logo-text">ECO<span>LAP</span></div>
                     </a>
                     <p>ECOLAP es la plataforma líder en gestión e incentivo del reciclaje. Transformamos comunidades a través de la innovación verde y la tecnología sostenible.</p>
@@ -397,28 +401,9 @@
     <!-- Fin del footer -->
 
     <!-- ==========================================================
-         SCRIPT JAVASCRIPT
-         Controla la apertura/cierre del menú móvil hamburguesa
+         SCRIPT JAVASCRIPT compartido (app.js)
          ========================================================== -->
-    <script>
-        // Referencias a los elementos del DOM
-        const burger = document.getElementById('ecolapBurger');
-        const menu = document.getElementById('ecolapMenu');
-
-        // Toggle del menú al hacer click en el botón hamburguesa
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('active');
-            menu.classList.toggle('active');
-        });
-
-        // Cierra el menú al hacer click en cualquier enlace
-        document.querySelectorAll('.ecolap-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                burger.classList.remove('active');
-                menu.classList.remove('active');
-            });
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
